@@ -1,0 +1,19 @@
+/* `opacity`
+   ========================================================================== */
+
+@if $u-classes-opacity == true {
+
+  $opacity-values:
+    (0, 0)
+    (50, 0.5)
+    (100, 1);
+
+  @each $opacity, $opacity-value in $opacity-values {
+  
+    .u-opacity--#{$opacity} {
+      opacity: $opacity-value !important;
+    }
+  
+  }
+
+}

@@ -1,0 +1,34 @@
+/**
+ * Note: aliases and maps live in _utility-values.scss 
+ */
+
+
+/* Mixin
+   ========================================================================== */
+
+/**
+ * Example usage:
+ * `@include fa-text-color(default);`
+ * `@include fa-text-color(light);`
+ * `@include fa-text-color(fa-blue, !important);`
+ */
+
+@mixin fa-text-color($value, $important: null) {
+  color: map-get($text-color-values, $value) $important;
+}
+
+
+/* Utility classes
+   ========================================================================== */
+  
+@if $u-classes-text-color == true {
+    
+  @each $text-color, $text-color-value in $text-color-values {
+  
+    .u-text-color--#{$text-color} {
+      color: $text-color-value !important;
+    }
+  
+  }
+
+}

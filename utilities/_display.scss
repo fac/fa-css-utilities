@@ -1,0 +1,50 @@
+/**
+ * Note: `flexbox` display properties are defined in '_flexbox.scss'
+ */
+
+
+/* `display`
+   ========================================================================== */
+
+@if $u-classes-display == true {
+
+  $display-values:
+    block
+    inline
+    inline-block
+    none
+    table
+    table-cell
+    table-row;
+
+  @each $display-value in $display-values {
+  
+    .u-display--#{$display-value} {
+      display: $display-value !important;
+    }
+  
+  }
+
+}
+
+
+/* `visibility`
+   ========================================================================== */
+
+@if $u-classes-display == true {
+
+  $visibility-values:
+    collapse
+    hidden
+    inherit
+    visible;
+
+  @each $visibility-value in $visibility-values {
+  
+    .u-visibility--#{$visibility-value} {
+      visibility: $visibility-value !important;
+    }
+  
+  }
+
+}

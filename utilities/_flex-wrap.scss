@@ -1,0 +1,48 @@
+/* `flex-wrap`
+   ========================================================================== */
+
+/**
+ * Note: work is derived from https://github.com/mastastealth/sass-flex-mixin
+ *
+ * The 'flex-wrap' property controls whether the flex container is single-line
+ * or multi-line, and the direction of the cross-axis, which determines
+ * the direction new lines are stacked in. 
+ *
+ * http://w3.org/tr/css3-flexbox/#flex-wrap-property
+ *
+ * Values: nowrap | wrap | wrap-reverse
+ * Default: nowrap
+ *
+ * Example usage:
+ * `@include flex-wrap(no-wrap);`
+ * `@include flex-wrap(wrap-reverse, !important);`
+ */
+
+@mixin flex-wrap($value: nowrap, $important: null) {
+  
+  -webkit-flex-wrap: $value $important;
+  -moz-flex-wrap: $value $important;
+  flex-wrap: $value $important;
+  
+}
+
+
+/* Utility classes
+   ========================================================================== */
+
+@if $u-classes-flex-wrap == true {
+
+  $flex-wrap-values:
+    nowrap
+    wrap
+    wrap-reverse;
+
+  @each $flex-wrap-value in $flex-wrap-values {
+  
+    .u-flex-wrap--#{$flex-wrap-value} {
+      @include flex-wrap(#{$flex-wrap-value}, !important);
+    }
+  
+  }
+
+}

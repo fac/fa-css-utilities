@@ -1,0 +1,70 @@
+/* `align-self`
+   ========================================================================== */
+
+/**
+ * Note: work is derived from https://github.com/mastastealth/sass-flex-mixin
+ *
+ * Flex items can be aligned in the cross axis of the current line of the
+ * flex container, similar to 'justify-content' but in the perpendicular
+ * direction. 'align-items' sets the default alignment for all of the flex
+ * container's items, including anonymous flex items. 'align-self' allows
+ * this default alignment to be overridden for individual flex items. (For
+ * anonymous flex items, 'align-self' always matches the value of 'align-items'
+ * on their associated flex container.)
+ *
+ * http://www.w3.org/TR/css3-flexbox/#align-items-property
+ *
+ * Values: auto | flex-start | flex-end | center | baseline | stretch
+ * Default: auto
+ *
+ * Example usage:
+ * `@include flex-align-items(baseline);`
+ * `@include flex-align-items(baseline, !important);`
+ */
+
+@mixin flex-align-self($value: auto, $important: null) {
+  
+  @if $value == flex-start {
+    -ms-flex-item-align: start $important;
+    -webkit-align-self: $value $important;
+    -moz-align-self: $value $important;
+    align-self: $value $important;
+  }
+  @else if $value == flex-end {
+    -ms-flex-item-align: end $important;
+    -webkit-align-self: $value $important;
+    -moz-align-self: $value $important;
+    align-self: $value $important;
+  }
+  @else {
+    -ms-flex-item-align: $value $important;
+    -webkit-align-self: $value $important;
+    -moz-align-self: $value $important;
+    align-self: $value $important;
+  }
+  
+}
+
+
+/* Utility classes
+   ========================================================================== */
+
+@if $u-classes-flex-align-self == true {
+
+  $flex-align-self-values:
+  auto
+  baseline
+  center
+  flex-end
+  flex-start
+  stretch;
+
+  @each $flex-align-self-value in $flex-align-self-values {
+  
+    .u-flex-align-self--#{$flex-align-self-value} {
+      @include flex-align-self(#{$flex-align-self-value}, !important);
+    }
+  
+  }
+
+}

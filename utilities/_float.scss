@@ -1,0 +1,62 @@
+/* `float`
+   ========================================================================== */
+
+@if $u-classes-float == true {
+
+  $float-values:
+    left
+    none
+    right;
+
+  @each $float-value in $float-values {
+  
+    .u-float--#{$float-value} {
+      float: $float-value !important;
+    }
+  
+  }
+
+}
+
+
+/* Float container
+   ========================================================================== */
+
+/**
+ * Make an element expand to contain floated children.
+ * Uses pseudo-elements (micro clearfix).
+ *
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of the
+ *    element.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ *
+ * Example usage:
+ * `@include floatContainer;`
+ */
+
+@mixin floatContainer {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@if $u-classes-float == true {
+
+  .u-floatContainer:before,
+  .u-floatContainer:after {
+    /* 1 */
+    content: " ";
+    /* 2 */
+    display: table;
+  }
+
+  .u-floatContainer:after {
+    clear: both;
+  }
+
+}

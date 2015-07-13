@@ -1,0 +1,55 @@
+/* `flexbox` 
+   ========================================================================== */
+
+/**
+ * Note: work is derived from https://github.com/mastastealth/sass-flex-mixin
+ *
+ * The 'flex' value causes an element to generate a block-level flex
+ * container box.
+ *
+ * The 'inline-flex' value causes an element to generate a inline-level
+ * flex container box. 
+ *
+ * http://w3.org/tr/css3-flexbox/#flex-containers
+ *
+ * Values: flex | inline-flex
+ *
+ * Example usage:
+ * `@include flexbox;`
+ * `@include flexbox(inline-flex, !important);`
+ */
+
+@mixin flexbox($value: flexbox, $important: null) {
+    
+  @if $value == flex {
+    display: -webkit-box $important;
+    display: -webkit-flex $important;
+    display: -moz-flex $important;
+    display: -ms-flexbox $important;
+    display: flex $important;
+  }
+  @else if $value == inline-flex {
+    display: -webkit-inline-box $important;
+    display: -webkit-inline-flex $important;
+    display: -moz-inline-flex $important;
+    display: -ms-inline-flexbox $important;
+    display: inline-flex $important;
+  }
+
+}
+
+
+/* Utility classes
+   ========================================================================== */
+
+@if $u-classes-flexbox == true {
+
+  .u-flexbox {
+    @include flexbox(flex, !important);
+  }
+
+  .u-inline-flexbox {
+    @include flexbox(inline-flex, !important);
+  }
+
+}

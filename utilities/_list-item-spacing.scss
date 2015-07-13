@@ -1,0 +1,34 @@
+/**
+ * Note: scales, aliases and maps live in _utility-values.scss 
+ */
+
+
+/* Mixin
+   ========================================================================== */
+
+/**
+ * Example usage:
+ * `@include fa-list-item-spacing(tight);`
+ * `@include fa-list-item-spacing(default);`
+ * `@include fa-list-item-spacing(x-loose, !important);`
+ */
+
+@mixin fa-list-item-spacing($value, $important: null) {
+  margin-bottom: map-get($list-item-spacing-values, $value) $important;
+}
+
+
+/* Utility classes
+   ========================================================================== */
+    
+@if $u-classes-list-item-spacing == true {
+  
+  @each $list-item-spacing, $list-item-spacing-value in $list-item-spacing-values {
+  
+    .u-list-item-spacing--#{$list-item-spacing} li {
+      margin-bottom: $list-item-spacing-value !important;
+    }
+  
+  }
+  
+}

@@ -1,0 +1,19 @@
+/* `overflow`
+   ========================================================================== */
+
+@if $u-classes-overflow == true {
+
+  $overflow-values:
+    auto
+    hidden
+    visible;
+
+  @each $overflow-value in $overflow-values {
+  
+    .u-overflow--#{$overflow-value} {
+      overflow: $overflow-value !important;
+    }
+  
+  }
+
+}

@@ -1,0 +1,42 @@
+/* `flex-grow`
+   ========================================================================== */
+
+/**
+ * Note: work is derived from https://github.com/mastastealth/sass-flex-mixin
+ *
+ * The 'flex-grow' property sets the flex grow factor. Negative numbers
+ * are invalid.
+ *
+ * http://w3.org/tr/css3-flexbox/#flex-grow-property
+ *
+ * Values: <number>
+ * Default: 0
+ *
+ * Example usage:
+ * `@include flex-grow(1);`
+ * `@include flex-grow(2, !important);`
+ */
+
+@mixin flex-grow($value: 0, $important: null) {
+  -webkit-box-flex: $value $important;
+  -webkit-flex-grow: $value $important;
+  -moz-flex-grow: $value $important;
+  -ms-flex-positive: $value $important;
+  flex-grow: $value $important;
+}
+
+
+/* Utility classes
+   ========================================================================== */
+
+@if $u-classes-flex-grow == true {
+
+  @for $i from 0 through 10 {
+  
+    .u-flex-grow--#{$i} {
+      @include flex-grow($i, !important);
+    }
+  
+  }
+
+}

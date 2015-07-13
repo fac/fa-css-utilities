@@ -1,0 +1,157 @@
+/* `font-kerning`
+   ========================================================================== */
+
+/**
+ * Example usage:
+ * `@include font-kerning(normal);`
+ */
+
+@mixin font-kerning($value...) {
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  -webkit-font-kerning: normal;
+  -moz-font-kerning: normal;
+  font-kerning: normal;
+}
+
+@if $u-classes-text-formatting == true {
+
+  .u-font-kerning--normal {
+    @include font-kerning(!important);
+  }
+
+}
+  
+  
+/* `font-style`
+   ========================================================================== */
+
+@if $u-classes-text-formatting == true {
+
+  $font-style-values:
+    italic
+    normal
+    oblique;
+
+  @each $font-style-value in $font-style-values {
+  
+    .u-font-style--#{$font-style-value} {
+      font-style: $font-style-value !important;
+    }
+  
+  }
+
+}
+
+
+/* `text-align`
+   ========================================================================== */
+
+@if $u-classes-text-formatting == true {
+
+  $text-align-values:
+    center
+    justify
+    left
+    right;
+
+  @each $text-align-value in $text-align-values {
+  
+    .u-text-align--#{$text-align-value} {
+      text-align: $text-align-value !important;
+    }
+  
+  }
+
+}
+
+
+/* Truncate text
+   ========================================================================== */
+
+/**
+ * Prevent text from wrapping onto multiple lines, and truncate with an
+ * ellipsis.
+ *
+ * Example usage:
+ * `@include text-truncate;`
+ * `@include text-truncate(!important);`
+ */
+
+@mixin text-truncate($important: null) {
+  max-width: 100% $important;
+  min-width: 0 $important;
+  overflow: hidden $important;
+  text-overflow: ellipsis $important;
+  white-space: nowrap $important;
+  word-wrap: normal $important;
+}
+
+@if $u-classes-text-formatting == true {
+  
+  .u-text-truncate {
+    @include text-truncate(!important);
+  }
+
+}
+
+
+/* Text on multiple lines
+   ========================================================================== */
+
+/**
+ * Forces text onto multiple lines (only required when the text of it's parent
+ * element is being truncated) 
+ *
+ * Example usage:
+ * `@include text-multiLine;`
+ * `@include text-multiLine(!important);`
+ */
+
+
+@mixin text-multiLine($important: null) {
+  overflow: visible $important;
+  white-space: normal $important;
+}
+
+@if $u-classes-text-formatting == true {
+
+  .u-text-multiLine {
+    @include text-multiLine(!important);
+  }
+
+}
+
+
+/* `white-space`
+   ========================================================================== */
+
+@if $u-classes-text-formatting == true {
+
+  .u-white-space--nowrap {
+    white-space: nowrap !important;
+  }
+
+}
+
+
+/* `word-wrap`
+   ========================================================================== */
+
+@if $u-classes-text-formatting == true {
+
+  $word-wrap-values:
+    break-word
+    normal;
+
+  @each $word-wrap-value in $word-wrap-values {
+  
+    .u-word-wrap--#{$word-wrap-value} {
+      word-wrap: $word-wrap-value !important;
+    }
+  
+  }
+
+}

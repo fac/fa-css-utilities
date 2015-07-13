@@ -1,0 +1,60 @@
+/* `animation`
+   ========================================================================== */
+
+/* Global default transition property — as used in the `transition` mixin */
+$transition-property-default: all;
+
+/* Global transition type property — as used in the `transition` mixin */
+$transition-type-default: cubic-bezier(0.2, 0.7, 0.1, 1);
+
+/* Global transition length */
+$transition-length-default: 450ms;
+
+/**
+ * Use to define an animation. If `$length` and `$transition` are not defined,
+ * the global defaults (`$transition-length-default` and `$transition-property-default`
+ * respectively will be used)
+ * 
+ * Example usage:
+ * `@include animation(fadeInOut, 1s, ease-out, infinite);`
+ * `@include animation(ease-out, !important);`
+ */
+
+@mixin animation($animation-name: null, $length: $transition-length-default, $transition: $transition-type-default, $iteration: 1) {
+  -webkit-animation-name: $animation-name;
+  -webkit-animation-duration: $length;
+  -webkit-animation-timing-function: $transition;
+  -webkit-animation-iteration-count: $iteration;
+  animation-name: $animation-name;
+  animation-duration: $length;
+  animation-timing-function: $transition;
+  animation-iteration-count: $iteration;
+}
+
+
+/* `keyframes`
+   ========================================================================== */
+
+/**
+ * Example:
+ * `@include keyframes(animation-name) {
+ *   0% {
+ *     opacity: 0;
+ *   }
+ *   50% {
+ *     opacity: 0.5;
+ *   }
+ *   100% {
+ *     opacity: 1;
+ *   }
+ * }`
+ */
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content
+  };
+  @keyframes #{$name} {
+    @content 
+  };
+}

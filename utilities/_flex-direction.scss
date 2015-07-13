@@ -1,0 +1,78 @@
+/* `flex-direction`
+   ========================================================================== */
+
+/**
+ * Note: work is derived from https://github.com/mastastealth/sass-flex-mixin
+ *
+ * The 'flex-direction' property specifies how flex items are placed in
+ * the flex container, by setting the direction of the flex container's
+ * main axis. This determines the direction that flex items are laid out in.
+ *
+ * http://w3.org/tr/css3-flexbox/#flex-direction-property
+ *
+ * Values: row | row-reverse | column | column-reverse
+ * Default: row
+ *
+ * Example usage:
+ * `@include flex-direction(row);`
+ * `@include flex-direction(row, !important);`
+ */
+
+@mixin flex-direction($value: row, $important: null) {
+    
+  @if $value == row {
+    -webkit-box-direction: normal $important;
+    -webkit-box-orient: horizontal $important;
+    -webkit-flex-direction: row $important;
+    -moz-flex-direction: row $important;
+    -ms-flex-direction: row $important;
+    flex-direction: row $important;
+  }
+  @else if $value == row-reverse {
+    -webkit-box-direction: reverse $important;
+    -webkit-box-orient: horizontal $important;
+    -webkit-flex-direction: row-reverse $important;
+    -moz-flex-direction: row-reverse $important;
+    -ms-flex-direction: row-reverse $important;
+    flex-direction: row-reverse $important;
+  }
+  @else if $value == column {
+    -webkit-box-direction: normal $important;
+    -webkit-box-orient: vertical $important;
+    -webkit-flex-direction: column $important;
+    -moz-flex-direction: column $important;
+    -ms-flex-direction: column $important;
+    flex-direction: column $important;
+  } 
+  @else if $value == column-reverse {
+    -webkit-box-direction: reverse $important;
+    -webkit-box-orient: vertical $important;
+    -webkit-flex-direction: column-reverse $important;
+    -moz-flex-direction: column-reverse $important;
+    -ms-flex-direction: column-reverse $important;
+    flex-direction: column-reverse $important;
+  }
+  
+}
+
+
+/* Utility classes
+   ========================================================================== */
+
+@if $u-classes-flex-direction == true {
+
+  $flex-direction-values:
+    column
+    column-reverse
+    row
+    row-reverse;
+
+  @each $flex-direction-value in $flex-direction-values {
+  
+    .u-flex-direction--#{$flex-direction-value} {
+      @include flex-direction(#{$flex-direction-value}, !important);
+    }
+  
+  }
+
+}

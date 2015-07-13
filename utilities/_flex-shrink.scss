@@ -1,0 +1,41 @@
+/* `flex-shrink`
+   ========================================================================== */
+
+/**
+ * Note: work is derived from https://github.com/mastastealth/sass-flex-mixin
+ *
+ * The 'flex-shrink' property sets the flex shrink factor. Negative numbers
+ * are invalid.
+ *
+ * http://w3.org/tr/css3-flexbox/#flex-shrink-property
+ *
+ * Values: <number>
+ * Default: 1
+ *
+ * Example usage:
+ * `@include flex-shrink(1);`
+ * `@include flex-shrink(3, !important);`
+ */
+
+@mixin flex-shrink($value: 1, $important: null) {
+  -webkit-flex-shrink: $value $important;
+  -moz-flex-shrink: $value $important;
+  -ms-flex-negative: $value $important;
+  flex-shrink: $value $important;
+}
+
+
+/* Utility classes
+   ========================================================================== */
+
+@if $u-classes-flex-shrink == true {
+
+  @for $i from 0 through 10 {
+  
+    .u-flex-shrink--#{$i} {
+      @include flex-shrink($i, !important);
+    }
+  
+  }
+
+}

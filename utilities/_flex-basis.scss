@@ -1,0 +1,53 @@
+/* `flex-basis`
+   ========================================================================== */
+
+/**
+ * Note: work is derived from https://github.com/mastastealth/sass-flex-mixin
+ *
+ * The 'flex-basis' property sets the flex basis. Negative lengths are invalid.
+ *
+ * http://www.w3.org/TR/css3-flexbox/#flex-basis-property
+ *
+ * Values: content | <‘width’>
+ * Default: auto
+ *
+ * Example usage:
+ * `@include flex-basis(auto);`
+ * `@include flex-basis(25%, !important);`
+ */
+
+@mixin flex-basis($value: auto, $important: null) {
+  -webkit-flex-basis: $value $important;
+  -moz-flex-basis: $value $important;
+  -ms-flex-preferred-size: $value $important;
+  flex-basis: $value $important;
+}
+
+
+/* Utility classes
+   ========================================================================== */
+
+@if $u-classes-flex-basis == true {
+
+  $flex-basis-values:
+    (auto, auto),
+    (0, 0),
+    (20percent, 20%),
+    (25percent, 25%),
+    (third, 100/3*1%),
+    (40percent, 40%),
+    (50percent, 50%),
+    (60percent, 60%),
+    (75percent, 75%),
+    (80percent, 80%),
+    (100percent, 100%);
+
+  @each $flex-basis, $flex-basis-value in $flex-basis-values {
+  
+    .u-flex-basis--#{$flex-basis} {
+      @include flex-basis(#{$flex-basis-value}, !important);
+    }
+  
+  }
+
+}

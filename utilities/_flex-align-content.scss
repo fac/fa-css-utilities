@@ -1,0 +1,73 @@
+/* `align-content`
+   ========================================================================== */
+
+/**
+ * Note: work is derived from https://github.com/mastastealth/sass-flex-mixin
+ *
+ * The 'align-content' property aligns a flex container's lines within the
+ * flex container when there is extra space in the cross-axis, similar to
+ * how 'justify-content' aligns individual items within the main-axis. Note,
+ * this property has no effect when the flexbox has only a single line.
+ *
+ * http://w3.org/tr/css3-flexbox/#align-content-property
+ *
+ * Values: flex-start | flex-end | center | space-between | space-around | stretch
+ * Default: stretch
+ *
+ * Example usage:
+ * `@include flex-align-content(flex-end);`
+ * `@include flex-align-content(flex-end, !important);`
+*/
+
+@mixin flex-align-content($value: stretch, $important: null) {
+  
+  @if $value == center {
+    -ms-flex-line-pack: center $important;
+    -webkit-align-content: $value $important;
+    -moz-align-content: $value $important;
+    align-content: $value $important;
+  }
+  @else if $value == flex-start {
+    -ms-flex-line-pack: start $important;
+    -webkit-align-content: $value $important;
+    -moz-align-content: $value $important;
+    align-content: $value $important;
+  }
+  @else if $value == flex-end {
+    -ms-flex-line-pack: end $important;
+    -webkit-align-content: $value $important;
+    -moz-align-content: $value $important;
+    align-content: $value $important;
+  }
+  @else {
+    -ms-flex-line-pack: $value $important;
+    -webkit-align-content: $value $important;
+    -moz-align-content: $value $important;
+    align-content: $value $important;
+  }
+  
+}
+
+
+/* Utility classes
+   ========================================================================== */
+
+@if $u-classes-flex-align-content == true {
+
+  $flex-align-content-values:
+    center
+    flex-end
+    flex-start
+    space-around
+    space-between
+    stretch;
+
+  @each $flex-align-content-value in $flex-align-content-values {
+  
+    .u-flex-align-content--#{$flex-align-content-value} {
+      @include flex-align-content(#{$flex-align-content-value}, !important);
+    }
+  
+  }
+
+}

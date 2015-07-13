@@ -1,0 +1,59 @@
+/**
+ * Note: scales and aliases live in _utility-values.scss 
+ */
+
+
+/* Map
+   ========================================================================== */
+
+$font-weight-values: (
+  1:         $font-weight--1,
+  2:         $font-weight--2,
+  3:         $font-weight--3,
+  4:         $font-weight--4,
+  5:         $font-weight--5,
+  6:         $font-weight--6,
+  7:         $font-weight--7,
+  8:         $font-weight--8,
+  9:         $font-weight--9,
+  thin:      $font-weight--thin,
+  x-light:   $font-weight--x-light,
+  light:     $font-weight--light,
+  normal:    $font-weight--normal,
+  medium:    $font-weight--medium,
+  semi-bold: $font-weight--semi-bold,
+  bold:      $font-weight--bold,
+  x-bold:    $font-weight--x-bold,
+  black:     $font-weight--black
+);
+
+
+/* Mixin
+   ========================================================================== */
+
+/**
+ * Example usage:
+ * `@include fa-font-weight(thin);`
+ * `@include fa-font-weight(bold);`
+ * `@include fa-font-weight(9, !important);`
+ */
+
+@mixin fa-font-weight($value, $important: null) {
+  font-weight: map-get($font-weight-values, $value) $important;
+}
+
+
+/* Utility classes
+   ========================================================================== */
+
+@if $u-classes-font-weight == true {
+
+  @each $font-weight, $font-weight-value in $font-weight-values {
+  
+    .u-font-weight--#{$font-weight} {
+      font-weight: $font-weight-value !important;
+    }
+  
+  }
+
+}

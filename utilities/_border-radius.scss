@@ -1,0 +1,121 @@
+/* `border-radius`
+   ========================================================================== */
+
+/**
+ * Example usage:
+ * `@include fa-border-radius(large);`
+ * `@include fa-border-radius(small, !important);`
+ */
+
+
+/* Map
+   ========================================================================== */
+
+$border-radius-values: (
+  0:        0,
+  small:    $border-radius--small,
+  default:  $border-radius--default,
+  large:    $border-radius--large,
+  x-large:  $border-radius--x-large,
+  xx-large: $border-radius--xx-large
+);
+
+
+/* `border-radius`
+   ========================================================================== */
+
+@mixin fa-border-radius($value, $important: null) {
+  border-radius: map-get($border-radius-values, $value) $important;
+}
+
+@if $u-classes-border-radius == true {
+
+  @each $border-radius, $border-radius-value in $border-radius-values {
+
+    .u-border-radius--#{$border-radius} {
+      border-radius: $border-radius-value !important;
+    }
+
+  }
+
+}
+
+
+/* `border-bottom-left-radius`
+   ========================================================================== */
+
+@mixin fa-border-radius-bottom-left($value, $important: null) {
+  border-bottom-left-radius: map-get($border-radius-values, $value) $important;
+}
+
+@if $u-classes-border-radius == true {
+
+  @each $border-radius-bottom-left, $border-radius-value in $border-radius-values {
+
+    .u-border-radius-bottom-left--#{$border-radius-bottom-left} {
+      border-bottom-left-radius: $border-radius-value !important;
+    }
+
+  }
+
+}
+
+
+/* `border-bottom-right-radius`
+   ========================================================================== */
+
+@mixin fa-border-radius-bottom-right($value, $important: null) {
+  border-bottom-right-radius: map-get($border-radius-values, $value) $important;
+}
+
+@if $u-classes-border-radius == true {
+
+  @each $border-radius-bottom-right, $border-radius-value in $border-radius-values {
+
+    .u-border-radius-bottom-right--#{$border-radius-bottom-right} {
+      border-bottom-right-radius: $border-radius-value !important;
+    }
+
+  }
+
+}
+
+
+/* `border-top-left-radius`
+   ========================================================================== */
+
+@mixin fa-border-radius-top-left($value, $important: null) {
+  border-top-left-radius: map-get($border-radius-values, $value) $important;
+}
+
+@if $u-classes-border-radius == true {
+
+  @each $border-radius-top-left, $border-radius-value in $border-radius-values {
+
+    .u-border-radius-top-left--#{$border-radius-top-left} {
+      border-top-left-radius: $border-radius-value !important;
+    }
+
+  }
+
+}
+
+
+/* `border-top-right-radius`
+   ========================================================================== */
+
+@mixin fa-border-radius-top-right($value, $important: null) {
+  border-top-right-radius: map-get($border-radius-values, $value) $important;
+}
+
+@if $u-classes-border-radius == true {
+
+  @each $border-radius-top-right, $border-radius-value in $border-radius-values {
+
+    .u-border-radius-top-right--#{$border-radius-top-right} {
+      border-top-right-radius: $border-radius-value !important;
+    }
+
+  }
+
+}

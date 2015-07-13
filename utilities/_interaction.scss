@@ -1,0 +1,92 @@
+/* `pointer-events`
+   ========================================================================== */
+
+@if $u-classes-interaction == true {
+
+  $pointer-events-values:
+    auto
+    none;
+
+  @each $pointer-events-value in $pointer-events-values {
+  
+    .u-pointer-events--#{$pointer-events-value} {
+      pointer-events: $pointer-events-value !important;
+    }
+  
+  }
+
+}
+
+
+/* `tap-highlight`
+   ========================================================================== */
+
+/**
+ * Disable WebKit tap highlights to simulate native app behaviour
+ *
+ * Example usage:
+ * `@include tap-highlight(none);`
+ * `@include tap-highlight(none, !important);`
+ */
+
+@mixin tap-highlight($value, $important: null) {
+  @if $value == none {
+    -webkit-tap-highlight-color: rgba(0,0,0,0) $important;
+    -webkit-tap-highlight-color: transparent $important;
+    -webkit-touch-callout: none $important;
+  }
+  @else {
+    -webkit-tap-highlight-color: $value $important;
+    -webkit-tap-highlight-color: $value $important;
+    -webkit-touch-callout: $value $important;
+  }
+}
+
+@if $u-classes-interaction == true {
+
+  .u-tap-highlight--none {
+    -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+  }
+
+}
+
+
+/* `user-select`
+   ========================================================================== */
+
+/**
+ * Prevent user from selecting (e.g. copy/paste) certain elements
+ *
+ * Example usage:
+ * `@include user-select(none);`
+ * `@include user-select(text);`
+ * `@include user-select(text, !important);`
+ */
+
+@mixin user-select($values...) {
+  -webkit-user-select: $values;
+  -moz-user-select:    $values;
+  -ms-user-select:     $values;
+  user-select:         $values;
+}
+
+@if $u-classes-interaction == true {
+
+  $user-select-values:
+    none
+    text;
+
+  @each $user-select-value in $user-select-values {
+  
+    .u-user-select--#{$user-select-value} {
+      -moz-user-select: $user-select-value !important;
+      -ms-user-select: $user-select-value !important;
+      -webkit-user-select: $user-select-value !important;
+      user-select: $user-select-value !important;
+    }
+  
+  }
+
+}

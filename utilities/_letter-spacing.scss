@@ -1,0 +1,19 @@
+/* `letter-spacing`
+   ========================================================================== */
+
+@if $u-classes-letter-spacing == true {
+
+  $letter-spacing-values:
+    0
+    normal
+    inherit;
+
+  @each $letter-spacing-value in $letter-spacing-values {
+  
+    .u-letter-spacing--#{$letter-spacing-value} {
+      letter-spacing: $letter-spacing-value !important;
+    }
+  
+  }
+
+}

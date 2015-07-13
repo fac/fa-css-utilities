@@ -1,0 +1,20 @@
+/* `vertical-align`
+   ========================================================================== */
+
+@if $u-classes-vertical-align == true {
+
+  $vertical-align-values:
+    baseline
+    bottom
+    middle
+    top;
+
+  @each $vertical-align-value in $vertical-align-values {
+  
+    .u-vertical-align--#{$vertical-align-value} {
+      vertical-align: $vertical-align-value !important;
+    }
+  
+  }
+
+}

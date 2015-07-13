@@ -1,0 +1,82 @@
+/**
+ * Note: scales and aliases live in _utility-values.scss 
+ */
+
+/* `border`
+   ========================================================================== */
+
+/**
+ * Example usage:
+ * `@include fa-border(default, gray-13);`
+ * `@include fa-border-bottom(thick, fa-blue, !important);`
+ *
+ * Retina (0.5px) border:
+ *
+ * ```
+ * .MyComponent {
+ *   @include fa-border(default, gray-12);
+ * }
+ * 
+ * .retina .MyComponent {
+ *   @include fa-border(thin, gray-12);
+ * }
+ * ```
+ */
+
+
+/* Mixin
+   ========================================================================== */
+
+@mixin fa-border($border-width-value, $border-color-value, $important: null) {
+  border: map-get($border-width-values, $border-width-value) solid map-get($color-values, $border-color-value) $important;
+}
+
+@mixin fa-border-bottom($border-width-value, $border-color-value, $important: null) {
+  border-bottom: map-get($border-width-values, $border-width-value) solid map-get($color-values, $border-color-value) $important;
+}
+
+@mixin fa-border-left($border-width-value, $border-color-value, $important: null) {
+  border-left: map-get($border-width-values, $border-width-value) solid map-get($color-values, $border-color-value) $important;
+}
+
+@mixin fa-border-right($border-width-value, $border-color-value, $important: null) {
+  border-right: map-get($border-width-values, $border-width-value) solid map-get($color-values, $border-color-value) $important;
+}
+
+@mixin fa-border-top($border-width-value, $border-color-value, $important: null) {
+  border-top: map-get($border-width-values, $border-width-value) solid map-get($color-values, $border-color-value) $important;
+}
+
+
+/* Utility classes
+   ========================================================================== */
+
+@if $u-classes-border == true {
+
+  $border-values: none;
+
+  @each $border-value in $border-values {
+  
+    .u-border--#{$border-value} {
+      border: $border-value !important;
+    }
+
+    .u-border-bottom--#{$border-value} {
+      border-bottom: $border-value !important;
+    }
+  
+    .u-border-left--#{$border-value} {
+      border-left: $border-value !important;
+    }
+
+    .u-border-right--#{$border-value} {
+      border-right: $border-value !important;
+    }
+
+    .u-border-top--#{$border-value} {
+      border-top: $border-value !important;
+    }
+
+  }
+
+}

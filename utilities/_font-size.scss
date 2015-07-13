@@ -1,0 +1,65 @@
+/**
+ * Note: scales, aliases and maps live in _utility-values.scss 
+ */
+
+
+/* Map
+   ========================================================================== */
+
+$font-size-values: (
+  1:        $font-size--1,
+  2:        $font-size--2,
+  3:        $font-size--3,
+  4:        $font-size--4,
+  5:        $font-size--5,
+  6:        $font-size--6,
+  7:        $font-size--7,
+  8:        $font-size--8,
+  9:        $font-size--9,
+  10:       $font-size--10,
+  11:       $font-size--11,
+  12:       $font-size--12,
+  13:       $font-size--13,
+  14:       $font-size--14,
+  15:       $font-size--15,
+  16:       $font-size--16,
+  17:       $font-size--17,
+  xx-small: $font-size--xx-small,
+  x-small:  $font-size--x-small,
+  small:    $font-size--small,
+  default:  $font-size--default,
+  large:    $font-size--large,
+  x-large:  $font-size--x-large,
+  xx-large: $font-size--xx-large
+);
+
+
+/* Mixin
+   ========================================================================== */
+
+/**
+ * Example usage:
+ * `@include fa-font-size(small);`
+ * `@include fa-font-size(x-large);`
+ * `@include fa-font-size(17, !important);`
+ */
+
+@mixin fa-font-size($value, $important: null) {
+  font-size: map-get($font-size-values, $value) $important;
+}
+
+
+/* Utility classes
+   ========================================================================== */
+
+@if $u-classes-font-size == true {
+
+  @each $font-size, $font-size-value in $font-size-values {
+
+    .u-font-size--#{$font-size} {
+      font-size: $font-size-value !important;
+    }
+
+  }
+
+}

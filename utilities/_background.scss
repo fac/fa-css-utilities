@@ -1,0 +1,131 @@
+/* `background`
+   ========================================================================== */
+
+@if $u-classes-background == true {
+
+  $background-values:
+    inherit,
+    none;
+
+  @each $background-value in $background-values {
+  
+    .u-background--#{$background-value} {
+      background: $background-value !important;
+    }
+  
+  }
+
+}
+
+
+/* `background-color`
+   ========================================================================== */
+
+/**
+ * Example usage:
+ * `@include fa-background-color(gray-12);`
+ * `@include fa-background-color(fa-blue);`
+ * `@include fa-background-color(gray-16, !important);`
+ */
+
+@mixin fa-background-color($value, $important: null) {
+  background-color: map-get($color-values, $value) $important;
+}
+
+
+@if $u-classes-background == true {
+
+  @each $color, $color-value in $color-values {
+  
+    .u-background-color--#{$color} {
+      background-color: $color-value !important;
+    }
+  
+  }
+
+  $background-color-values:
+    inherit
+    transparent;
+
+  @each $background-color-value in $background-color-values {
+  
+    .u-background-color--#{$background-color-value} {
+      background-color: $background-color-value !important;
+    }
+  
+    .u-background-color--#{$background-color-value}--active:active {
+      background-color: $background-color-value !important;
+    }
+
+    .u-background-color--#{$background-color-value}--hover:hover {
+      background-color: $background-color-value !important;
+    }
+
+  }
+}
+
+
+/* `background-image`
+   ========================================================================== */
+
+@if $u-classes-background == true {
+
+  $background-image-values:
+    none;
+
+  @each $background-image-value in $background-image-values {
+  
+    .u-background-image--#{$background-image-value} {
+      background-image: $background-image-value !important;
+    }
+  
+  }
+
+}
+
+
+/* `background-position`
+   ========================================================================== */
+
+@if $u-classes-background == true {
+
+  $background-position-values:
+    (center-bottom, center bottom)
+    (center-center, center center)
+    (center-top, center top)
+    (left-bottom, left bottom)
+    (left-center, left center)
+    (left-top, left top)
+    (right-bottom, right bottom)
+    (right-center, right center)
+    (right-top, right top);
+
+  @each $background-position, $background-position-value in $background-position-values {
+  
+    .u-background-position--#{$background-position} {
+      background-position: $background-position-value !important;
+    }
+  
+  }
+
+}
+
+
+/* `background-size`
+   ========================================================================== */
+
+@if $u-classes-background == true {
+
+  $background-size-values:
+    cover
+    contain;
+
+  @each $background-size-value in $background-size-values {
+  
+    .u-background-size--#{$background-size-value} {
+      background-size: $background-size-value !important;
+    }
+  
+  }
+
+}

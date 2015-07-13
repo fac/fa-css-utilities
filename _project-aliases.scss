@@ -1,0 +1,11 @@
+/* Mobile
+   ========================================================================== */
+
+@if $project == mobile {
+  $line-height--tight:  $line-height--2;
+  $line-height--default:  $line-height--3;
+  $line-height--loose:  $line-height--4;
+  $line-height--x-loose:  $line-height--5;
+  $line-height--xx-loose:  $line-height--6;
+  $text-color--default: $color--gray-4;
+}

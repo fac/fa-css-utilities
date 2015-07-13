@@ -1,0 +1,44 @@
+/* `flex` 
+   ========================================================================== */
+
+/**
+ * Note: work is derived from https://github.com/mastastealth/sass-flex-mixin
+ *
+ * The 'flex' property specifies the components of a flexible length: the
+ * flex grow factor and flex shrink factor, and the flex basis. When an
+ * element is a flex item, 'flex' is consulted instead of the main size
+ * property to determine the main size of the element. If an element is
+ * not a flex item, 'flex' has no effect.
+ *
+ * http://w3.org/tr/css3-flexbox/#flex-property
+ *
+ * Values: none | [ <‘flex-grow’> <‘flex-shrink’>? || <‘flex-basis’> ]
+ * Default: 0 1 auto
+ *
+ * Example usage:
+ * `@include flex(1 1 auto);`
+ * `@include flex(0 1 25%, !important);`
+ */
+
+@mixin flex($fg: 1, $fs: null, $fb: null, $important: null) {
+    
+  /* Set a variable to be used by box-flex properties */
+
+  $fg-boxflex: $fg;
+
+  /*
+  Box-Flex only supports a flex-grow value so let's grab the
+  first item in the list and just return that.
+  */
+
+  @if type-of($fg) == 'list' {
+    $fg-boxflex: nth($fg, 1);
+  }
+
+  -webkit-box-flex: $fg-boxflex $important;
+  -webkit-flex: $fg $fs $fb $important;
+  -moz-box-flex: $fg-boxflex $important;
+  -moz-flex: $fg $fs $fb $important;
+  -ms-flex: $fg $fs $fb $important;
+  flex: $fg $fs $fb $important;
+}

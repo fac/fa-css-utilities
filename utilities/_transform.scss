@@ -1,0 +1,40 @@
+/* Transforms
+   ========================================================================== */
+
+/**
+ * Rotate
+ *
+ * Example:
+ * `@include rotate(45deg);`
+ */
+
+@mixin rotate($degree) {
+	-webkit-transform: rotate($degree);
+	transform: rotate($degree);
+}
+
+/**
+ * Transform
+ *
+ * Example:
+ * `@include transform(translateX(2) translateY(5));`
+ */
+
+@mixin transform($transforms...) {
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+/**
+ * Mixin for CSS3 translate3d property, allowing for elements to be moved along
+ * x, y and z axis with hardware acceleration enabled
+ *
+ * Example:
+ * `@include translate3d(100%, -50%, 0);`
+ * `@include translate3d(100%, 0, 0, !important);`
+ */
+
+@mixin translate3d($xAxis: 0, $yAxis: 0, $zAxis: 0, $important: null) {
+  -webkit-transform: translate3d($xAxis, $yAxis, $zAxis $important);
+          transform: translate3d($xAxis, $yAxis, $zAxis $important);
+}

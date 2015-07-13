@@ -1,0 +1,31 @@
+/* `text-decoration`
+   ========================================================================== */
+
+@if $u-classes-text-decoration == true {
+
+  $text-decoration-values:
+    inherit
+    initial
+    line-through
+    none
+    overline
+    underline;
+
+  @each $text-decoration-value in $text-decoration-values {
+  
+    .u-text-decoration--#{$text-decoration-value} {
+      text-decoration: $text-decoration-value !important;
+    }
+    .u-text-decoration--#{$text-decoration-value}--active:active {
+      text-decoration: $text-decoration-value !important;
+    }
+    .u-text-decoration--#{$text-decoration-value}--focus:focus {
+      text-decoration: $text-decoration-value !important;
+    }
+    .u-text-decoration--#{$text-decoration-value}--hover:hover {
+      text-decoration: $text-decoration-value !important;
+    }
+  
+  }
+
+}

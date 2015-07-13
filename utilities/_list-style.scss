@@ -1,0 +1,23 @@
+/* `list-style`
+   ========================================================================== */
+
+@if $u-classes-list-style == true {
+
+  $list-style-values:
+    (decimal, decimal)
+    (decimal-inside, decimal inside)
+    (decimal-outside, decimal outside)
+    (disc, disc)
+    (disc-inside, disc inside)
+    (disc-outside, disc outside)
+    (none, none);
+
+  @each $list-style, $list-style-value in $list-style-values {
+  
+    .u-list-style--#{$list-style} {
+      list-style: $list-style-value !important;
+    }
+  
+  }
+
+}

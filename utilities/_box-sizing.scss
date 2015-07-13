@@ -1,0 +1,18 @@
+/* `box-sizing`
+   ========================================================================== */
+
+@if $u-classes-box-sizing == true {
+
+  $box-sizing-values:
+    border-box
+    content-box;
+
+  @each $box-sizing-value in $box-sizing-values {
+  
+    .u-box-sizing--#{$box-sizing-value} {
+      box-sizing: $box-sizing-value !important;
+    }
+  
+  }
+
+}

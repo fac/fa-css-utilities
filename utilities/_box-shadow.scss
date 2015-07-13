@@ -1,0 +1,13 @@
+/* `box-shadow`
+   ========================================================================== */
+
+/**
+ * Example usage:
+ * `@include box-shadow(0, 1px, 1px, rgba(0, 0, 0, 0.12));`
+ * `@include box-shadow(0, 1px, 1px, rgba(0, 0, 0, 0.12), !important);`
+ */
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"", $important: null) {
+  -webkit-box-shadow: $top $left $blur $color #{$inset} $important;
+  box-shadow: $top $left $blur $color #{$inset} $important;
+}

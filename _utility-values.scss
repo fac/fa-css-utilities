@@ -1,0 +1,164 @@
+/* Border
+   ========================================================================== */
+
+$border-width--1: 0.5px;
+$border-width--2: 1px;
+$border-width--3: 2px;
+$border-width--4: 3px;
+$border-width--5: 4px;
+
+
+/* Border radius
+   ========================================================================== */
+
+$border-radius--1: 2px;
+$border-radius--2: 4px;
+$border-radius--3: 6px;
+$border-radius--4: 8px;
+$border-radius--5: 10px;
+
+
+/* Colors
+   ========================================================================== */
+
+/* Brand colors */
+$color--fa-blue:       rgb(0, 122, 191);
+$color--fa-light-blue: rgb(83, 193, 228);
+$color--fa-dark-blue:  rgb(25, 71, 114);
+$color--fa-green:      rgb(124, 192, 74);
+$color--fa-green-text: rgb(101, 160, 11);
+$color--fa-dark-green: rgb(23, 101, 67);
+$color--fa-yellow:     rgb(255, 182, 8);
+$color--fa-amber-text: rgb(255, 157, 5);
+$color--fa-orange:     rgb(254, 107, 16);
+$color--fa-red:        rgb(222, 31, 47);
+$color--fa-red-text:   rgb(253, 69, 39);
+$color--fa-cyan:       rgb(0, 194, 190);
+$color--fa-pink:       rgb(221, 55, 123);
+$color--fa-purple:     rgb(118, 54, 142);
+
+/* Grays */
+$color--gray-1:  #111;
+$color--gray-2:  #222;
+$color--gray-3:  #333;
+$color--gray-4:  #444;
+$color--gray-5:  #555;
+$color--gray-6:  #666;
+$color--gray-7:  #777;
+$color--gray-8:  #888;
+$color--gray-9:  #999;
+$color--gray-10: #aaa;
+$color--gray-11: #bbb;
+$color--gray-12: #ccc;
+$color--gray-13: #ddd;
+$color--gray-14: #e4e4e4;
+$color--gray-15: #eee;
+$color--gray-16: #f5f5f5;
+
+
+/* `font-family`
+   ========================================================================== */
+
+$font-family--1: "Source Sans Pro", "Helvetica Neue", Arial, Helvetica, sans-serif;
+$font-family--2: "Helvetica Neue", Arial, Helvetica, sans-serif;
+$font-family--3: "effra", "Helvetica Neue", Arial, Helvetica, sans-serif;
+$font-family--4: "swister", "Helvetica Neue", Arial, Helvetica, sans-serif;
+$font-family--5: "Monaco", "Courier New", Courier, monospace;
+
+
+/* `font-size`
+   ========================================================================== */
+
+$base-unit: 16;
+
+/* Function to convert `px` to `rem` */
+@function rem($pixels, $context: $base-unit) {
+  @return #{$pixels/$context}rem;
+}
+
+$font-size--1:  rem(9);
+$font-size--2:  rem(10);
+$font-size--3:  rem(11);
+$font-size--4:  rem(12);
+$font-size--5:  rem(14);
+$font-size--6:  rem(16);
+$font-size--7:  rem(18);
+$font-size--8:  rem(21);
+$font-size--9:  rem(24);
+$font-size--10: rem(28);
+$font-size--11: rem(32);
+$font-size--12: rem(36);
+$font-size--13: rem(42);
+$font-size--14: rem(48);
+$font-size--15: rem(54);
+$font-size--16: rem(60);
+$font-size--17: rem(72);
+
+
+/* `font-weight`
+   ========================================================================== */
+
+$font-weight--1: 100;
+$font-weight--2: 200;
+$font-weight--3: 300;
+$font-weight--4: 400;
+$font-weight--5: 500;
+$font-weight--6: 600;
+$font-weight--7: 700;
+$font-weight--8: 800;
+$font-weight--9: 900;
+
+
+/* `line-height`
+   ========================================================================== */
+
+$line-height--1:  90%;
+$line-height--2:  100%;
+$line-height--3:  110%;
+$line-height--4:  120%;
+$line-height--5:  125%;
+$line-height--6:  130%;
+$line-height--7:  135%;
+$line-height--8:  140%;
+$line-height--9:  145%;
+$line-height--10: 150%;
+$line-height--11: 155%;
+
+
+/* Spacing
+   ========================================================================== */
+
+$spacing--0:  0;
+$spacing--1:  0.15em;
+$spacing--2:  0.25em;
+$spacing--3:  0.5em;
+$spacing--4:  0.75em;
+$spacing--5:  1em;
+$spacing--6:  1.25em;
+$spacing--7:  1.5em;
+$spacing--8:  1.75em;
+$spacing--9:  2em;
+$spacing--10: 2.25em;
+$spacing--11: 2.5em;
+$spacing--12: 2.75em;
+$spacing--13: 3em;
+$spacing--14: 3.5em;
+$spacing--15: 4em;
+$spacing--16: 4.5em;
+$spacing--17: 5em;
+
+
+/* `z-index`
+   ========================================================================== */
+
+$z-index--0:  0;
+$z-index--1:  1;
+$z-index--2:  2;
+$z-index--3:  3;
+$z-index--4:  4;
+$z-index--5:  5;
+$z-index--6:  6;
+$z-index--7:  7;
+$z-index--8:  8;
+$z-index--9:  9;
+$z-index--10: 10;

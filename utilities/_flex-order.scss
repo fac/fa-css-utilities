@@ -1,0 +1,26 @@
+/* `order` 
+   ========================================================================== */
+
+/**
+ * Note: work is derived from https://github.com/mastastealth/sass-flex-mixin
+ *
+ * The 'order' property controls the order in which flex items appear within
+ * their flex container, by assigning them to ordinal groups.
+ *
+ * http://w3.org/tr/css3-flexbox/#order-property
+ *
+ * Values: <integer>
+ * Default: 0
+ *
+ * Example usage:
+ * `@include flex-order(flex-start);`
+ * `@include flex-order(flex-start, !important);`
+ */
+
+@mixin flex-order($value: 0, $important: null) {
+  -webkit-box-ordinal-group: $value + 1 $important;
+  -webkit-order: $value $important;
+  -moz-order: $value $important;
+  -ms-flex-order: $value $important;
+  order: $value $important;
+}

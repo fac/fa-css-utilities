@@ -1,0 +1,19 @@
+/* `clear`
+   ========================================================================== */
+
+@if $u-classes-clear == true {
+
+  $clear-values:
+    both
+    left
+    right;
+
+  @each $clear-value in $clear-values {
+  
+    .u-clear--#{$clear-value} {
+      clear: $clear-value !important;
+    }
+  
+  }
+
+}

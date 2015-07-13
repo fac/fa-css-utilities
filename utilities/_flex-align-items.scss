@@ -1,0 +1,56 @@
+/* `align-items`
+   ========================================================================== */
+
+/**
+ * Note: work is derived from https://github.com/mastastealth/sass-flex-mixin
+ *
+ * Flex items can be aligned in the cross axis of the current line of the
+ * flex container, similar to 'justify-content' but in the perpendicular
+ * direction. 'align-items' sets the default alignment for all of the flex
+ * container's items, including anonymous flex items. 'align-self' allows
+ * this default alignment to be overridden for individual flex items. (For
+ * anonymous flex items, 'align-self' always matches the value of 'align-items'
+ * on their associated flex container.) 
+ *
+ * http://w3.org/tr/css3-flexbox/#align-items-property
+ *
+ * Values: flex-start | flex-end | center | baseline | stretch
+ * Default: stretch
+ *
+ * Example usage:
+ * `@include flex-align-items(center);`
+ * `@include flex-align-items(center, !important);`
+ */
+
+@mixin flex-align-items($value: stretch, $important: null) {
+  
+  -webkit-box-align: $value $important;
+  -ms-flex-align: $value $important;
+  -webkit-align-items: $value $important;
+  -moz-align-items: $value $important;
+  align-items: $value $important;
+  
+}
+
+
+/* Utility classes
+   ========================================================================== */
+
+@if $u-classes-flex-align-items == true {
+
+  $flex-align-items-values:
+    baseline
+    center
+    flex-end
+    flex-start
+    stretch;
+
+  @each $flex-align-items-value in $flex-align-items-values {
+  
+    .u-flex-align-items--#{$flex-align-items-value} {
+      @include flex-align-items(#{$flex-align-items-value}, !important);
+    }
+  
+  }
+
+}
