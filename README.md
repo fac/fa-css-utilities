@@ -7,20 +7,15 @@ FA CSS Utilities exist as an [NPM module](https://www.npmjs.com/package/fa-css-u
 
 ### Overview
 
-**Global defaults, overridable per-project**
-Global utility values are defined in [`_utility-values`](https://github.com/fac/fa-css-utilities/blob/master/_utility-values.scss). These can be overridden on per-project basis by adding custom rules to [`_project-aliases`](https://github.com/fac/fa-css-utilities/blob/master/_project-aliases.scss). Note: adding custom project aliases involves contributing to the repo, which we've provided instruction for below.
+**Global defaults, overridable per-project**. Global utility values are defined in [`_utility-values`](https://github.com/fac/fa-css-utilities/blob/master/_utility-values.scss). These can be overridden on per-project basis by adding custom rules to [`_project-aliases`](https://github.com/fac/fa-css-utilities/blob/master/_project-aliases.scss). Note: adding custom project aliases involves contributing to the repo, which we've provided instruction for below.
 
-**Scales and aliases**
-Certain utilities (e.g. `font-size`, `line-height`, spacing, color) have scales of values, as well as aliases. All aliases live in [`_utility-aliases.scss`](https://github.com/fac/fa-css-utilities/blob/master/_utility-aliases.scss). Aliases provide a finite scale (`x-small`, `default`, `xx-large`, etc) to make authoring easier and more meaningful. Per-project aliases can be created (as they are for mobile), and applied using the `$project` variable. 
+**Scales and aliases**. Certain utilities (e.g. `font-size`, `line-height`, spacing, color) have scales of values, as well as aliases. All aliases live in [`_utility-aliases.scss`](https://github.com/fac/fa-css-utilities/blob/master/_utility-aliases.scss). Aliases provide a finite scale (`x-small`, `default`, `xx-large`, etc) to make authoring easier and more meaningful. Per-project aliases can be created (as they are for mobile), and applied using the `$project` variable. 
 
-**Meaningful namespacing**
-Mixins for any FreeAgent-specific properties are prepended with `fa-`. Simple rule: if we have a custom value for a property (i.e. a value that isn't part of the CSS spec), we have a custom mixin. 
+**Meaningful namespacing**. Mixins for any FreeAgent-specific properties are prepended with `fa-`. Simple rule: if we have a custom value for a property (i.e. a value that isn't part of the CSS spec), we have a custom mixin. 
 
-**Turning utility classes on/off**
-Utility classes (which mirror the behaviour of our mixins but can be applied to HTML elements directly) can be turned off by setting `$render-utility-classes: false` in [`_utility-settings.scss`](https://github.com/fac/fa-origin/blob/master/assets/scss/_utility-settings.scss) (part of our [FA Origin](https://github.com/fac/fa-origin) repo).
+**Turning utility classes on/off**. Utility classes (which mirror the behaviour of our mixins but can be applied to HTML elements directly) can be turned off by setting `$render-utility-classes: false` in [`_utility-settings.scss`](https://github.com/fac/fa-origin/blob/master/assets/scss/_utility-settings.scss) (part of our [FA Origin](https://github.com/fac/fa-origin) repo).
 
-**Optional `!important`**
-`!important` can be added to any mixin declaration, e.g.: `@include fa-padding(large, !important);`. All utility classes have `!important` because utilities exist to do _one thing no matter what_.
+**Optional `!important`**. `!important` can be added to any mixin declaration, e.g.: `@include fa-padding(large, !important);`. All utility classes have `!important` because utilities exist to do _one thing no matter what_.
 
 ### How to use utilities
 
