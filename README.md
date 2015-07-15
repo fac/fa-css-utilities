@@ -1,9 +1,15 @@
 # FreeAgent CSS utilities
-Colors, font-sizes, font-families, line-heights, and margin/padding values are just a few of the CSS properties we share across our various projects and platforms. This collection of CSS utilities is our way of managing those properties and using them in a consistent way.
+These CSS utilities are our ‘one true source’ of design properties at FreeAgent, comprising:
+
+* Universal scales and aliases for: `font-size`, `font-family`, `line-height`, `color`, `background-color`, `margin`, `padding`, `border-radius`, and more 
+* Library of colours for text and block-level elements
+* Mixins and `.u-` utility classes for 40+ CSS properties
+
+This means our properties are managed and versioned in a single place, and we have a universal language for using them across our projects and platforms.
 
 ### Install
 
-FA CSS Utilities exist as an [NPM module](https://www.npmjs.com/package/fa-css-utilities), and should be installed as part of [FA Origin](https://github.com/fac/fa-origin) rather than a standalone project, so follow those installation instructions.
+FA CSS Utilities aren’t installable as a standalone project (they exist as an [NPM module](https://www.npmjs.com/package/fa-css-utilities)). They should be [installed as part of FA Origin](https://github.com/fac/fa-origin#installation), our starting point for web-based projects. 
 
 ### Overview
 
