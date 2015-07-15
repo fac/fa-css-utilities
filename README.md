@@ -15,7 +15,7 @@ Utilities aren’t installable as a standalone project (they exist as an [NPM mo
 
 ### Overview
 
-**Global values and aliases**. Global utility values are defined in [`_utility-values`](https://github.com/fac/fa-css-utilities/blob/master/_utility-values.scss). Certain utilities (e.g. `font-size`, `line-height`, spacing, color) have scales of values, as well as aliases. All aliases live in [`_utility-aliases.scss`](https://github.com/fac/fa-css-utilities/blob/master/_utility-aliases.scss). Aliases provide a finite scale (`x-small`, `default`, `xx-large`, etc) to make authoring easier and more meaningful.
+**Global values and aliases**. Global utility values are defined in [`_utility-values`](https://github.com/fac/fa-css-utilities/blob/master/_utility-values.scss). Utilities `font-size`, `line-height`, `padding`, `margin`, etc have scales of values, as well as aliases. All aliases live in [`_utility-aliases.scss`](https://github.com/fac/fa-css-utilities/blob/master/_utility-aliases.scss). Aliases provide a finite scale (`x-small`, `default`, `xx-large`, etc) to make authoring easier and more meaningful.
 
 **Local aliases**. You can assign local, project-specific aliases to global values by adding rules to [`_project-aliases`](https://github.com/fac/fa-css-utilities/blob/master/_project-aliases.scss). This way you aren’t continually declaring something like `@include fa-line-height(x-loose)` for your project’s default `line-height`. You can just assign `x-loose` to `default` for your project.
 
@@ -109,14 +109,15 @@ All team members should be contributing back to this repo in order to improve it
 2. Branch off master (`git checkout -b <your-branch-name>`) and make your changes
 3. Push up your changes (`git push origin <your-branch-name>`) and write a [helpful pull request](https://github.com/blog/1943-how-to-write-the-perfect-pull-request) describing your changes
 4. Ask a fellow designer to review your changes. Make any required changes, then merge your branch into master: `git checkout master; git merge <your-branch-name>`
-5. Push up the new version of master (`git push origin master`), then [create a new release](https://help.github.com/articles/creating-releases/) (tip: [choosing version numbers](http://semver.org/))
+5. Push up the new version of master (`git push origin master`), then [create a new release](https://help.github.com/articles/creating-releases/) ([how to choose version numbers](http://semver.org/))
 6. [Update the NPM package](https://docs.npmjs.com/getting-started/publishing-npm-packages) with a new version number. If you don't yet have access to update the NPM package, have someone in the design team add as a contributor.
 
 
 ### Acknowledgements
-* [Nicolas Gallagher](https://github.com/necolas) for his work on SUIT
+* [Nicolas Gallagher](https://github.com/necolas) particularly for his work on [SUIT CSS](https://suitcss.github.io/), which has informed much of the thinking behind this work
 * [Brian Franco](https://github.com/mastastealth) for the excellent [SASS flex mixin](https://github.com/mastastealth/sass-flex-mixin) we used as the basis for our own partials
 
 ### To do
+* Begin tagging specific releases
 * Allow `linear-gradient` mixin to accept color map and `!important` values
 * Allow `font-kerning` mixin to accept multiple values
