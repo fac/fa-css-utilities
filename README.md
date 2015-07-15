@@ -7,6 +7,8 @@ These CSS utilities are our ‘one true source’ of design properties at FreeAg
 
 This means our properties are managed and versioned in a single place, and we have a universal language for using them across our projects and platforms.
 
+[Guidance on writing HTML & CSS](https://github.com/fac/fa-origin/wiki)
+
 ### Install
 
 Utilities aren’t installable as a standalone project (they exist as an [NPM module](https://www.npmjs.com/package/fa-css-utilities)). Installing our starting point for web projects for will bring them in: [FA Origin](https://github.com/fac/fa-origin#installation). 
@@ -23,11 +25,11 @@ Utilities aren’t installable as a standalone project (they exist as an [NPM mo
 
 **Optional `!important`**. `!important` can be added to any mixin declaration, e.g.: `@include fa-padding(large, !important);`. This is especially useful for refactoring; `!important` allows us a way to turn existing UI patterns that rely on the cascade into completely self-contained components — _without_ breaking lots of stuff. Once a component has been created and rolled out, any `!important` arguments can just be removed. 
 
-### How to use utilities
+### Examples
 
-Most utilities can be applied two ways: directly to HTML elements as classes, or as mixins in a `.scss` file. Utilities can be added to any element; multiple utilities can be used together; and utilities can be used alongside components.
+Most utilities can be applied two ways: directly to HTML elements as classes, or as mixins in a `.scss` file. Utilities can be added to any element, multiple utilities can be used together, and utilities can be used alongside components.
  
-#### Using @include in SCSS
+#### Using mixins in SASS
  
 ```scss
 .MyComponent {
@@ -48,32 +50,49 @@ Most utilities can be applied two ways: directly to HTML elements as classes, or
 }
 ```
 
-#### Example: using utility classes in HTML
+#### Using utility classes in HTML
+Utility classes are useful for prototyping ideas, but treat them as temporary (remember they apply `!important`). Components should handle their own states and variants, so there should be relatively few utility classes being used in production.
+
+**You might start with this&hellip;**
+ 
 ```html
-<div class="u-background-position--bottom-right u-display--inline-block u-margin-bottom--default">
-  <h2 class="u-font-size--large u-line-height--large u-text-truncate">
-    Extra large heading, with a loose line leight, that will be truncated
-  </h2>
-  <p class="u-font-weight--300 u-text-color--light-2">
-    Paragraph with light font weight and extra extra light text color
-  </p>
-  <ul class="u-list-item-spacing---large u-list-style--none">
-    <li class="u-opacity--0">
-      <a class="u-text-decoration--underline--active" href="#">Opaque list item containing an anchor that gets a text underline when :active</a>
-    </li>
-  </ul>
+<div class="u-margin--0 u-padding--0 u-text-align--center u-border-radius--default u-border--thin--solid--fa-blue u-line-height--tight u-flexbox u-flex-align-items--stretch u-flex-direction--row">
+  <button class="u-background--none u-display--inline-block u-margin--0 u-border-right--thin--solid--blue u-padding--x-small--small u-text-color--x-light u-flex-grow--1 u-text-truncate">Payment</button>
+  <button class="u-background--none u-display--inline-block u-margin--0 u-padding--x-small--small u-text-color--x-light u-flex-grow--1 u-text-truncate">Refund</button>
 </div>
 ```
 
+**&hellip;but you should end up with:**
+
 ```html
-<div class="u-flexbox u-flex-align-items--stretch u-flex-direction--column-reverse">
-  <div class="u-flex-grow--1 u-flex-shrink--0 u-flex-basis--25percent">
-    Flexbox item that grows, doesn't shrink, and begins at 25% initial width
-  </div>
-  <div class="u-flex-grow--2 u-flex-shrink--1 u-flex-basis--auto">
-    Flexbox item that grows, shrinks, and has an automatic initial width
-  </div>
+<div class="SegmentedControl">
+  <button class="SegmentedControl-segment">Payment</button>
+  <button class="SegmentedControl-segment">Refund</button>
 </div>
+```
+
+```scss
+.SegmentedControl {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  @include fa-border-radius(default);
+  @include fa-border(thin, solid, fa-blue);
+  @include fa-line-height(tight);
+  @include flexbox(flex);
+  @include flex-align-items(stretch);
+  @include flex-direction(row);
+  
+.SegmentedControl-segment {
+  background: none;
+  display: inline-block;
+  margin: 0;
+  @include fa-border-right(thin, solid, fa-blue);
+  @include fa-padding(x-small, small)
+  @include fa-text-color(x-light);
+  @include flex-grow(1);
+  @include text-truncate;
+}
 ```
 
 #### Syntax
