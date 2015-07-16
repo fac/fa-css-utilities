@@ -108,9 +108,9 @@ All team members should be contributing back to this repo in order to improve it
 1. Make sure you're up to date with the master branch (`git fetch; git pull origin master`)
 2. Branch off master (`git checkout -b <your-branch-name>`) and make your changes
 3. Push up your changes (`git push origin <your-branch-name>`) and write a [helpful pull request](https://github.com/blog/1943-how-to-write-the-perfect-pull-request) describing your changes
-4. Ask a fellow designer to review your changes. Make any required changes, then merge your branch into master: `git checkout master; git merge <your-branch-name>`
-5. Push up the new version of master (`git push origin master`), then [create a new release](https://help.github.com/articles/creating-releases/) ([how to choose version numbers](http://semver.org/))
-6. [Update the NPM package](https://docs.npmjs.com/getting-started/publishing-npm-packages) with a new version number. If you don't yet have access to update the NPM package, have someone in the design team add as a contributor.
+4. Ask a fellow designer to review your changes. Make any required changes, then merge your branch into master: `git checkout master; git merge --no-ff <your-branch-name>`
+5. Push up the new version of master (`git push origin master`), then [create a new release](https://help.github.com/articles/creating-releases/) ([how to choose version numbers](http://semver.org/)) with a useful description
+6. [Update the NPM package](https://docs.npmjs.com/getting-started/publishing-npm-packages) (`npm publish`) with a new version number. If you don't yet have access to update the NPM package, have someone in the design team add as a contributor.
 
 
 ### Acknowledgements
