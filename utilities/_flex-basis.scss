@@ -32,15 +32,15 @@
   $flex-basis-values:
     (auto, auto),
     (0, 0),
-    (20percent, 20%),
-    (25percent, 25%),
-    (third, 100/3*1%),
-    (40percent, 40%),
-    (50percent, 50%),
-    (60percent, 60%),
+    (20percent,  20%),
+    (25percent,  25%),
+    (third,      100/3*1%),
+    (40percent,  40%),
+    (50percent,  50%),
+    (60percent,  60%),
     (two-thirds, 100/3*2%),
-    (75percent, 75%),
-    (80percent, 80%),
+    (75percent,  75%),
+    (80percent,  80%),
     (100percent, 100%);
 
   @each $flex-basis, $flex-basis-value in $flex-basis-values {
