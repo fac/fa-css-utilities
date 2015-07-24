@@ -47,7 +47,7 @@ $text-color--light:    $color--gray-6;
 $text-color--x-light:  $color--gray-9;
 $text-color--xx-light: $color--gray-10;
 $text-color--negative: $color--fa-red-text;
-$text-color--warning:  $color--fa-amber-text;
+$text-color--warning:  $color--fa-amber;
 $text-color--positive: $color--fa-green-text;
 
 /* Color map */
@@ -70,11 +70,12 @@ $color-values: (
   gray-16:       $color--gray-16,
   base:          $color--base,
   alt:           $color--alt,
+  fa-amber:      $color--fa-amber,
   fa-blue:       $color--fa-blue,
-  fa-light-blue: $color--fa-light-blue,
-  fa-dark-blue:  $color--fa-dark-blue,
+  fa-blue-dark:  $color--fa-blue-dark,
+  fa-blue-light: $color--fa-blue-light,
   fa-green:      $color--fa-green,
-  fa-dark-green: $color--fa-dark-green,
+  fa-green-dark: $color--fa-green-dark,
   fa-yellow:     $color--fa-yellow,
   fa-orange:     $color--fa-orange,
   fa-red:        $color--fa-red,
@@ -107,14 +108,14 @@ $text-color-values: (
   negative:      $text-color--negative,
   warning:       $text-color--warning,
   positive:      $text-color--positive,
+  fa-amber:      $color--fa-amber,
   fa-blue:       $color--fa-blue,
-  fa-light-blue: $color--fa-light-blue,
-  fa-dark-blue:  $color--fa-dark-blue,
+  fa-blue-light: $color--fa-blue-light,
+  fa-blue-dark:  $color--fa-blue-dark,
   fa-green:      $color--fa-green,
   fa-green-text: $color--fa-green-text,
-  fa-dark-green: $color--fa-dark-green,
+  fa-green-dark: $color--fa-green-dark,
   fa-yellow:     $color--fa-yellow,
-  fa-amber-text: $color--fa-amber-text,
   fa-orange:     $color--fa-orange,
   fa-red:        $color--fa-red,
   fa-red-orange: $color--fa-red-orange,
