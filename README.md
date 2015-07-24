@@ -119,6 +119,6 @@ All team members should be contributing back to this repo in order to improve it
 * [Brian Franco](https://github.com/mastastealth) for the excellent [SASS flex mixin](https://github.com/mastastealth/sass-flex-mixin) we used as the basis for our own partials
 
 ### To do
-* Begin tagging specific releases
+* Allow `margin` and `padding` to accept negative values 
 * Allow `linear-gradient` mixin to accept color map and `!important` values
 * Allow `font-kerning` mixin to accept multiple values
