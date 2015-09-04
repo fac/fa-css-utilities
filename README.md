@@ -13,8 +13,8 @@ This means our properties are managed and versioned in a single place, and we ha
 
 The utilities aren't a standalone project by themselves, but rather are to be installed in other projects. There are two ways to do so:
 
-* [Install using NPM](https://www.npmjs.com/package/fa-css-utilities))
-* [Install using Bower](is missing "main" entry in bower.json)
+* [Install using NPM](https://www.npmjs.com/package/fa-css-utilities)
+* [Install using Bower](http://bower.io/#install-packages)
 
 Our starting point for new web projects at FreeAgent is [FA Origin](https://github.com/fac/fa-origin#installation), of which `fa-css-utilities` is a dependency.
 
