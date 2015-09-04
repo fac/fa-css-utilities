@@ -1,0 +1,29 @@
+{
+  "name": "fa-css-utilities",
+  "version": "1.3.0",
+  "homepage": "https://github.com/fac/fa-css-utilities",
+  "authors": [
+    "Robbie Manson <robbie@freeagent.com>",
+    "FreeAgent Design Team <design@freeagent.com>"
+  ],
+  "description": "CSS utilities for using and managing FreeAgent design properties consistently",
+  "main": "_utilities.scss",
+  "repository": {
+        "type": "git",
+        "url": "git://github.com/fac/fa-css-utilities"
+    },
+  "keywords": [
+    "fa-css-utilities",
+    "css-utilities",
+    "css",
+    "freeagent"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
