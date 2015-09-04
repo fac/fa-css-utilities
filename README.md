@@ -1,7 +1,7 @@
 # FreeAgent CSS utilities
 These CSS utilities are our ‘one true source’ of design properties at FreeAgent, comprising:
 
-* Universal scales and aliases for: `font-size`, `font-family`, `line-height`, `color`, `background-color`, `margin`, `padding`, `border-radius`, and more 
+* Universal scales and aliases for: `font-size`, `font-family`, `line-height`, `color`, `background-color`, `margin`, `padding`, `border-radius`, and more
 * Library of colours for text and block-level elements
 * Mixins and `.u-` utility classes for 40+ CSS properties
 
@@ -11,7 +11,12 @@ This means our properties are managed and versioned in a single place, and we ha
 
 ### Install
 
-Utilities aren’t installable as a standalone project (they exist as an [NPM module](https://www.npmjs.com/package/fa-css-utilities)). Installing our starting point for web projects for will bring them in: [FA Origin](https://github.com/fac/fa-origin#installation). 
+The utilities aren't a standalone project by themselves, but rather are to be installed in other projects. There are two ways to do so:
+
+* [Install using NPM](https://www.npmjs.com/package/fa-css-utilities))
+* [Install using Bower](is missing "main" entry in bower.json)
+
+Our starting point for new web projects at FreeAgent is [FA Origin](https://github.com/fac/fa-origin#installation), of which `fa-css-utilities` is a dependency.
 
 ### Overview
 
@@ -23,14 +28,14 @@ Utilities aren’t installable as a standalone project (they exist as an [NPM mo
 
 **Turning utility classes on/off**. Utility _classes_ mirror the behaviour of our mixins but can be applied to HTML elements directly. Rendering all of them naturally adds a lot of weight a `.css` file, so they can be individually turned on/off in [`_utility-settings.scss`](https://github.com/fac/fa-origin/blob/master/assets/scss/_utility-settings.scss). Utility classes have `!important` because utilities exist to do _one thing no matter what_.
 
-**Optional `!important`**. `!important` can be added to any mixin declaration, e.g.: `@include fa-padding(large, !important);`. This is especially useful for refactoring; `!important` allows us a way to turn existing UI patterns that rely on the cascade into completely self-contained components — _without_ breaking lots of stuff. Once a component has been created and rolled out, any `!important` arguments can just be removed. 
+**Optional `!important`**. `!important` can be added to any mixin declaration, e.g.: `@include fa-padding(large, !important);`. This is especially useful for refactoring; `!important` allows us a way to turn existing UI patterns that rely on the cascade into completely self-contained components — _without_ breaking lots of stuff. Once a component has been created and rolled out, any `!important` arguments can just be removed.
 
 ### Examples
 
 Most utilities can be applied two ways: directly to HTML elements as classes, or as mixins in a `.scss` file. Utilities can be added to any element, multiple utilities can be used together, and utilities can be used alongside components.
- 
+
 #### Using mixins in SASS
- 
+
 ```scss
 .MyComponent {
   @include fa-background-color(gray-13);
@@ -54,7 +59,7 @@ Most utilities can be applied two ways: directly to HTML elements as classes, or
 Utility classes are useful for prototyping ideas, but treat them as temporary (remember they apply `!important`). Components should handle their own states and variants, so there should be relatively few utility classes being used in production.
 
 **You might start with this&hellip;**
- 
+
 ```html
 <div class="u-margin--0 u-padding--0 u-text-align--center u-border-radius--default u-border--thin--solid--fa-blue u-line-height--tight u-flexbox u-flex-align-items--stretch u-flex-direction--row">
   <button class="u-background--none u-display--inline-block u-margin--0 u-border-right--thin--solid--blue u-padding--x-small--small u-text-color--x-light u-flex-grow--1 u-text-truncate">Payment</button>
@@ -82,7 +87,7 @@ Utility classes are useful for prototyping ideas, but treat them as temporary (r
   @include flexbox(flex);
   @include flex-align-items(stretch);
   @include flex-direction(row);
-  
+
 .SegmentedControl-segment {
   background: none;
   display: inline-block;
@@ -107,11 +112,12 @@ All team members should be contributing back to this repo in order to improve it
 
 1. Make sure you're up to date with the master branch (`git fetch; git pull origin master`)
 2. Branch off master (`git checkout -b <your-branch-name>`) and make your changes
-3. Push up your changes (`git push origin <your-branch-name>`) and write a [helpful pull request](https://github.com/blog/1943-how-to-write-the-perfect-pull-request) describing your changes
-4. Ask a fellow designer to review your changes. Make any required changes, then merge your branch into master: `git checkout master; git merge --no-ff <your-branch-name>`
-5. Push up the new version of master (`git push origin master`), then [create a new release](https://help.github.com/articles/creating-releases/) ([how to choose version numbers](http://semver.org/)) with a useful description
-6. [Update the NPM package](https://docs.npmjs.com/getting-started/publishing-npm-packages) (`npm publish`) with a new version number. If you don't yet have access to update the NPM package, have someone in the design team add as a contributor.
-7. Update the `fa-css-utilities` version number in `package.json` for any projects you want to update
+3. Increment the version numbers in [package.json](https://github.com/fac/fa-css-utilities/blob/master/package.json) and [bower.json](https://github.com/fac/fa-css-utilities/blob/master/bower.json) ([how to choose a suitable version number](http://semver.org/))
+4. Push up your changes (`git push origin <your-branch-name>`) and write a [helpful pull request](https://github.com/blog/1943-how-to-write-the-perfect-pull-request) describing your changes
+5. Ask a fellow designer to review your changes. Make any required changes, then merge your branch into master: `git checkout master; git merge --no-ff <your-branch-name>`
+6. Push up the new version of master (`git push origin master`), then [create a new release](https://help.github.com/articles/creating-releases/) with a useful description
+7. [Update the NPM package](https://docs.npmjs.com/getting-started/publishing-npm-packages) (`npm publish`) with a new version number. If you don't yet have access to update the NPM package, have someone in the design team add as a contributor. There's no need to manually update the Bower package, as Bower relies solely on git tags for package version information.
+8. Consider updating the `fa-css-utilities` version numbers in `package.json` for any other projects that should receive these updates. [FA Origin](https://github.com/fac/fa-origin#installation) almost always should, so update that!
 
 
 ### Acknowledgements
@@ -119,6 +125,6 @@ All team members should be contributing back to this repo in order to improve it
 * [Brian Franco](https://github.com/mastastealth) for the excellent [SASS flex mixin](https://github.com/mastastealth/sass-flex-mixin) we used as the basis for our own partials
 
 ### To do
-* Allow `margin` and `padding` to accept negative values 
+* Allow `margin` and `padding` to accept negative values
 * Allow `linear-gradient` mixin to accept color map and `!important` values
 * Allow `font-kerning` mixin to accept multiple values
