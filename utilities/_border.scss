@@ -1,5 +1,5 @@
 /**
- * Note: scales and aliases live in _utility-values.scss 
+ * Note: scales and aliases live in _utility-values.scss
  */
 
 /* `border`
@@ -16,7 +16,7 @@
  * .MyComponent {
  *   @include fa-border(default, gray-12);
  * }
- * 
+ *
  * .retina .MyComponent {
  *   @include fa-border(thin, gray-12);
  * }
@@ -53,28 +53,26 @@
 
 @if $u-classes-border == true {
 
-  $border-values: none;
+  @each $border-width, $border-width-value in $border-width-values {
 
-  @each $border-value in $border-values {
-  
-    .u-border--#{$border-value} {
-      border: $border-value !important;
+    .u-border--#{$border-width} {
+      border: $border-width-value !important;
     }
 
-    .u-border-bottom--#{$border-value} {
-      border-bottom: $border-value !important;
-    }
-  
-    .u-border-left--#{$border-value} {
-      border-left: $border-value !important;
+    .u-border-bottom--#{$border-width} {
+      border-bottom: $border-width-value !important;
     }
 
-    .u-border-right--#{$border-value} {
-      border-right: $border-value !important;
+    .u-border-left--#{$border-width} {
+      border-left: $border-width-value !important;
     }
 
-    .u-border-top--#{$border-value} {
-      border-top: $border-value !important;
+    .u-border-right--#{$border-width} {
+      border-right: $border-width-value !important;
+    }
+
+    .u-border-top--#{$border-width} {
+      border-top: $border-width-value !important;
     }
 
   }
