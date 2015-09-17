@@ -122,7 +122,9 @@ All team members should be contributing back to this repo in order to improve it
 #### How To…
 
 **Add a new colour variable**
+
 To add a new colour simply add your colour to the *Colors* section in [_utility-values.scss](https://github.com/fac/fa-css-utilities/blob/master/_utility-values.scss).
+
 Declare your new colour using the `rgb(0, 0, 0)` format, and give it a sensible name. New colours should follow the same naming syntax as existing colours: $color--fa-*colour-name*--*variant*.
 
 
