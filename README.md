@@ -119,6 +119,12 @@ All team members should be contributing back to this repo in order to improve it
 7. [Update the NPM package](https://docs.npmjs.com/getting-started/publishing-npm-packages) (`npm publish`) with a new version number. If you don't yet have access to update the NPM package, have someone in the design team add as a contributor. There's no need to manually update the Bower package, as Bower relies solely on git tags for package version information.
 8. Consider updating the `fa-css-utilities` version numbers in `package.json` for any other projects that should receive these updates. [FA Origin](https://github.com/fac/fa-origin#installation) almost always should, so update that!
 
+#### How to…
+
+##### Add a new colour
+To create a new colour variable, add it to the *Colors* section in [_utility-values.scss](https://github.com/fac/fa-css-utilities/blob/master/_utility-values.scss). Your new colour should be defined using the `rgb(0, 0, 0)` format, and should follow the standard naming syntax: `$color--fa-colour-name--variant`, e.g. `$color--fa-blue--dark`.
+
+**NB:** New colours should only be added to the utilities after you have decided on the exact value, so be sure to test them locally beforehand.
 
 ### Acknowledgements
 * [Nicolas Gallagher](https://github.com/necolas) particularly for his work on [SUIT CSS](https://suitcss.github.io/), which has informed much of the thinking behind this work
