@@ -1,6 +1,7 @@
 /* Border width
    ========================================================================== */
 
+$border-width--0:        $border-width--0;
 $border-width--thin:     $border-width--1;
 $border-width--default:  $border-width--2;
 $border-width--thick:    $border-width--3;
@@ -9,6 +10,7 @@ $border-width--xx-thick: $border-width--5;
 
 /* Border width map */
 $border-width-values: (
+  0:        $border-width--0,
   thin:     $border-width--thin,
   default:  $border-width--default,
   thick:    $border-width--thick,
@@ -20,6 +22,7 @@ $border-width-values: (
 /* Border radius
    ========================================================================== */
 
+$border-radius--0:        $border-radius--0;
 $border-radius--small:    $border-radius--1;
 $border-radius--default:  $border-radius--2;
 $border-radius--large:    $border-radius--3;
