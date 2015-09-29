@@ -23,22 +23,37 @@ $border-radius--5: 10px;
 /* Colors
    ========================================================================== */
 
-/* Brand colors */
-$color--fa-amber:      rgb(255, 157, 2);
-$color--fa-blue:       rgb(0, 122, 191);
-$color--fa-blue-dark:  rgb(25, 71, 114);
-$color--fa-blue-light: rgb(83, 193, 228);
-$color--fa-cyan:       rgb(0, 194, 190);
-$color--fa-green:      rgb(124, 192, 74);
-$color--fa-green-dark: rgb(23, 101, 67);
-$color--fa-green-text: rgb(101, 160, 11);
-$color--fa-orange:     rgb(254, 107, 16);
-$color--fa-pink:       rgb(221, 55, 123);
-$color--fa-purple:     rgb(118, 54, 142);
-$color--fa-red:        rgb(222, 31, 47);
-$color--fa-red-orange: rgb(253, 81, 39);
-$color--fa-red-text:   rgb(253, 69, 39);
-$color--fa-yellow:     rgb(255, 182, 8);
+/**
+ * We have a set of base colours, and each can be tinted (made lighter) or
+ * shaded (made darker) by degrees using numbered `--tint` or `--shade`
+ * modifiers.
+ *
+ * Ex.
+ * $colour--fa-blue--shade-1
+ */
+
+/* Base colors */
+$color--fa-amber:                 rgb(255, 157, 2);
+$color--fa-blue:                  rgb(0, 122, 191);
+$color--fa-dark-blue:             rgb(25, 71, 114);
+$color--fa-light-blue:            rgb(229, 241, 247);
+$color--fa-cyan:                  rgb(0, 194, 190);
+$color--fa-green:                 rgb(124, 192, 74);
+$color--fa-dark-green:            rgb(23, 101, 67);
+$color--fa-green-text:            rgb(101, 160, 11);
+$color--fa-orange:                rgb(254, 107, 16);
+$color--fa-pink:                  rgb(221, 55, 123);
+$color--fa-purple:                rgb(118, 54, 142);
+$color--fa-red:                   rgb(222, 31, 47);
+$color--fa-red-orange:            rgb(253, 81, 39);
+$color--fa-red-text:              rgb(253, 69, 39);
+$color--fa-yellow:                rgb(255, 182, 8);
+
+/* Shades */
+$color--fa-blue--shade-1:         rgb(0, 104, 175);
+$color--fa-blue--shade-2:         rgb(0, 96, 163);
+$color--fa-blue--shade-3:         rgb(0, 89, 151);
+$color--fa-light-blue--shade-1:   rgb(219, 236, 244);
 
 /* Grays */
 $color--gray-1:  #111;
