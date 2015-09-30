@@ -24,21 +24,18 @@ $border-radius--5: 10px;
    ========================================================================== */
 
 /* Brand colors */
-$color--fa-amber:      rgb(255, 157, 2);
-$color--fa-blue:       rgb(0, 122, 191);
-$color--fa-blue-dark:  rgb(25, 71, 114);
-$color--fa-blue-light: rgb(83, 193, 228);
-$color--fa-cyan:       rgb(0, 194, 190);
-$color--fa-green:      rgb(124, 192, 74);
-$color--fa-green-dark: rgb(23, 101, 67);
-$color--fa-green-text: rgb(101, 160, 11);
-$color--fa-orange:     rgb(254, 107, 16);
-$color--fa-pink:       rgb(221, 55, 123);
-$color--fa-purple:     rgb(118, 54, 142);
-$color--fa-red:        rgb(222, 31, 47);
-$color--fa-red-orange: rgb(253, 81, 39);
-$color--fa-red-text:   rgb(253, 69, 39);
-$color--fa-yellow:     rgb(255, 182, 8);
+$color--fa-amber:        rgb(255, 157, 2);
+$color--fa-amber--dark:  rgb(255, 134, 0);
+$color--fa-blue:         rgb(0,   122, 191);
+$color--fa-blue--dark:   rgb(0,   104, 175);
+$color--fa-blue--x-dark: rgb(0,   89,  151);
+$color--fa-green:        rgb(124, 192, 74);
+$color--fa-green--dark:  rgb(98,  173, 53);
+$color--fa-green--text:  rgb(101, 160, 11);
+$color--fa-red:          rgb(253, 81,  39);
+$color--fa-red--dark:    rgb(237, 56,  25);
+$color--fa-red--text:    rgb(253, 69,  39);
+$color--fa-yellow:       rgb(255, 182, 8);
 
 /* Grays */
 $color--gray-1:  #111;
