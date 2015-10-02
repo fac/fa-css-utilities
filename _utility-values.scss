@@ -1,3 +1,9 @@
+/**
+ * The raw values of our utilities, along with their corresponding variables.
+ * The human-friendly aliases for these variables live in _utility-aliases.scss.
+ * It’s the aliases that are used to generate the `.u-property` utility classes.
+ */
+
 /* Border
    ========================================================================== */
 
@@ -23,20 +29,27 @@ $border-radius--5: 10px;
 /* Colors
    ========================================================================== */
 
-/* Brand colors */
-$color--fa-amber:        rgb(255, 157, 2);
-$color--fa-amber--dark:  rgb(255, 134, 0);
-$color--fa-blue:         rgb(0,   122, 191);
-$color--fa-blue--dark:   rgb(0,   104, 175);
-$color--fa-blue--x-dark: rgb(0,   89,  151);
-$color--fa-green:        rgb(124, 192, 74);
-$color--fa-green--dark:  rgb(98,  173, 53);
-$color--fa-green--text:  rgb(101, 160, 11);
-$color--fa-purple:       rgb(118, 54,  142);
-$color--fa-red:          rgb(253, 81,  39);
-$color--fa-red--dark:    rgb(237, 56,  25);
-$color--fa-red--text:    rgb(253, 69,  39);
-$color--fa-yellow:       rgb(255, 182, 8);
+/* Primary palette */
+$color--fa-amber:  rgb(255, 157, 2);
+$color--fa-blue:   rgb(0,   122, 191);
+$color--fa-green:  rgb(124, 192, 74);
+$color--fa-purple: rgb(118, 54,  142);
+$color--fa-red:    rgb(253, 81,  39);
+$color--fa-yellow: rgb(255, 182, 8);
+
+/* Dark and light variants */
+$color--fa-amber--dark:     adjust_hue(lighten($color--fa-amber, 0.5), 354);
+$color--fa-blue--dark:      adjust_hue(darken($color--fa-blue, 3.5), 2);
+$color--fa-blue--x-dark:    adjust_hue(darken($color--fa-blue, 8.5), 2);
+$color--fa-blue--x-light:   desaturate(lighten($color--fa-blue, 59), 50);
+$color--fa-green--dark:     adjust_hue(saturate(darken($color--fa-green, 7), 1), 0);
+$color--fa-green--text:     adjust_hue(saturate(darken($color--fa-green, 10), 0), 0);
+$color--fa-green--x-light:  desaturate(lighten($color--fa-green, 36), 10);
+$color--fa-purple--x-light: desaturate(lighten($color--fa-purple, 53), 20);
+$color--fa-red--dark:       desaturate(darken(adjust_hue($color--fa-red, 2), 10), 1);
+$color--fa-red--text:       adjust_hue(desaturate(darken($color--fa-red, 3), 0), 1);
+$color--fa-red--x-light:    desaturate(lighten($color--fa-red, 38), 2);
+$color--fa-yellow--x-light: lighten($color--fa-yellow, 39);
 
 /* Grays */
 $color--gray-1:  #111;
