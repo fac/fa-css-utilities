@@ -1,5 +1,5 @@
 /**
- * Note: scales and aliases live in _utility-values.scss 
+ * Note: scales and aliases live in _utility-values.scss
  */
 
 /* Map
@@ -16,6 +16,7 @@ $line-height-values: (
   8:        $line-height--8,
   9:        $line-height--9,
   10:       $line-height--10,
+  11:       $line-height--11,
   xx-tight: $line-height--xx-tight,
   x-tight:  $line-height--x-tight,
   tight:    $line-height--tight,
@@ -40,7 +41,7 @@ $line-height-values: (
   line-height: map-get($line-height-values, $value) $important;
 }
 
-  
+
 /* Utility classes
    ========================================================================== */
 
@@ -51,7 +52,7 @@ $line-height-values: (
     .u-line-height--#{$line-height} {
       line-height: $line-height-value !important;
     }
-  
+
   }
 
 }
