@@ -112,12 +112,13 @@ All team members should be contributing back to this repo in order to improve it
 
 1. Make sure you're up to date with the master branch (`git fetch; git pull origin master`)
 2. Branch off master (`git checkout -b <your-branch-name>`) and make your changes
-3. Increment the version numbers in [package.json](https://github.com/fac/fa-css-utilities/blob/master/package.json) and [bower.json](https://github.com/fac/fa-css-utilities/blob/master/bower.json) ([how to choose a suitable version number](http://semver.org/))
+3. Increment the version numbers in [package.json](https://github.com/fac/fa-css-utilities/blob/master/package.json) and [bower.json](https://github.com/fac/fa-css-utilities/blob/master/bower.json). Generally: fixes and smaller amendments to existing code are patches, new components are minor releases, and full rewrites are major releases. See [semver.org](http://semver.org/) for detailed guidance.
 4. Push up your changes (`git push origin <your-branch-name>`) and write a [helpful pull request](https://github.com/blog/1943-how-to-write-the-perfect-pull-request) describing your changes
 5. Ask a fellow designer to review your changes. Make any required changes, then merge your branch into master: `git checkout master; git merge --no-ff <your-branch-name>`
-6. Push up the new version of master (`git push origin master`), then [create a new release](https://help.github.com/articles/creating-releases/) with a useful description
-7. [Update the NPM package](https://docs.npmjs.com/getting-started/publishing-npm-packages) (`npm publish`) with a new version number. If you don't yet have access to update the NPM package, have someone in the design team add as a contributor. There's no need to manually update the Bower package, as Bower relies solely on git tags for package version information.
-8. Consider updating the `fa-css-utilities` version numbers in `package.json` for any other projects that should receive these updates. [FA Origin](https://github.com/fac/fa-origin#installation) almost always should, so update that!
+6. Push up the new version of master (`git push origin master`).
+7. [Create a new release](https://help.github.com/articles/creating-releases/) with a useful description. **If you’re making breaking changes, provide guidance in the release notes about what people will have to change in their projects (e.g. “rename instances of `u-padding--none` to `u-padding--0`”)**
+8. [Update the NPM package](https://docs.npmjs.com/getting-started/publishing-npm-packages) (`npm publish`) with a new version number. If you don't yet have access to update the NPM package, have someone in the design team add as a contributor. There's no need to manually update the Bower package, as Bower relies solely on git tags for package version information.
+9. Consider updating the `fa-css-utilities` version numbers in `package.json` for any other projects that should receive these updates. [FA Origin](https://github.com/fac/fa-origin#installation) almost always should, so update that!
 
 #### How to…
 
