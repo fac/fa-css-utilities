@@ -10,7 +10,7 @@
  * Example usage:
  * `@include text-color(default);`
  * `@include text-color(light);`
- * `@include text-color(fa-blue, !important);`
+ * `@include text-color(blue, !important);`
  */
 
 @mixin text-color($value, $important: null) {
