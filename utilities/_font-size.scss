@@ -1,5 +1,5 @@
 /**
- * Note: scales, aliases and maps live in _utility-values.scss 
+ * Note: scales, aliases and maps live in _utility-values.scss
  */
 
 
@@ -39,12 +39,12 @@ $font-size-values: (
 
 /**
  * Example usage:
- * `@include fa-font-size(small);`
- * `@include fa-font-size(x-large);`
- * `@include fa-font-size(17, !important);`
+ * `@include font-size(small);`
+ * `@include font-size(x-large);`
+ * `@include font-size(17, !important);`
  */
 
-@mixin fa-font-size($value, $important: null) {
+@mixin font-size($value, $important: null) {
   font-size: map-get($font-size-values, $value) $important;
 }
 

@@ -3,8 +3,8 @@
 
 /**
  * Example usage:
- * `@include fa-border-radius(large);`
- * `@include fa-border-radius(small, !important);`
+ * `@include border-radius(large);`
+ * `@include border-radius(small, !important);`
  */
 
 
@@ -24,7 +24,7 @@ $border-radius-values: (
 /* `border-radius`
    ========================================================================== */
 
-@mixin fa-border-radius($value, $important: null) {
+@mixin border-radius($value, $important: null) {
   border-radius: map-get($border-radius-values, $value) $important;
 }
 
@@ -44,7 +44,7 @@ $border-radius-values: (
 /* `border-bottom-left-radius`
    ========================================================================== */
 
-@mixin fa-border-radius-bottom-left($value, $important: null) {
+@mixin border-radius-bottom-left($value, $important: null) {
   border-bottom-left-radius: map-get($border-radius-values, $value) $important;
 }
 
@@ -64,7 +64,7 @@ $border-radius-values: (
 /* `border-bottom-right-radius`
    ========================================================================== */
 
-@mixin fa-border-radius-bottom-right($value, $important: null) {
+@mixin border-radius-bottom-right($value, $important: null) {
   border-bottom-right-radius: map-get($border-radius-values, $value) $important;
 }
 
@@ -84,7 +84,7 @@ $border-radius-values: (
 /* `border-top-left-radius`
    ========================================================================== */
 
-@mixin fa-border-radius-top-left($value, $important: null) {
+@mixin border-radius-top-left($value, $important: null) {
   border-top-left-radius: map-get($border-radius-values, $value) $important;
 }
 
@@ -104,7 +104,7 @@ $border-radius-values: (
 /* `border-top-right-radius`
    ========================================================================== */
 
-@mixin fa-border-radius-top-right($value, $important: null) {
+@mixin border-radius-top-right($value, $important: null) {
   border-top-right-radius: map-get($border-radius-values, $value) $important;
 }
 

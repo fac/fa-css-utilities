@@ -44,11 +44,11 @@
     (100percent, 100%);
 
   @each $flex-basis, $flex-basis-value in $flex-basis-values {
-  
+
     .u-flex-basis--#{$flex-basis} {
       @include flex-basis(#{$flex-basis-value}, !important);
     }
-  
+
   }
 
 }

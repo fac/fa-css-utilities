@@ -7,18 +7,18 @@
 
 /**
  * Example usage:
- * `@include fa-border(default, gray-13);`
- * `@include fa-border-bottom(thick, fa-blue, !important);`
+ * `@include border(default, gray-13);`
+ * `@include border-bottom(thick, fa-blue, !important);`
  *
  * Retina (0.5px) border:
  *
  * ```
  * .MyComponent {
- *   @include fa-border(default, gray-12);
+ *   @include border(default, gray-12);
  * }
  *
  * .retina .MyComponent {
- *   @include fa-border(thin, gray-12);
+ *   @include border(thin, gray-12);
  * }
  * ```
  */
@@ -27,23 +27,23 @@
 /* Mixin
    ========================================================================== */
 
-@mixin fa-border($border-width-value, $border-color-value, $important: null) {
+@mixin border($border-width-value, $border-color-value, $important: null) {
   border: map-get($border-width-values, $border-width-value) solid map-get($color-values, $border-color-value) $important;
 }
 
-@mixin fa-border-bottom($border-width-value, $border-color-value, $important: null) {
+@mixin border-bottom($border-width-value, $border-color-value, $important: null) {
   border-bottom: map-get($border-width-values, $border-width-value) solid map-get($color-values, $border-color-value) $important;
 }
 
-@mixin fa-border-left($border-width-value, $border-color-value, $important: null) {
+@mixin border-left($border-width-value, $border-color-value, $important: null) {
   border-left: map-get($border-width-values, $border-width-value) solid map-get($color-values, $border-color-value) $important;
 }
 
-@mixin fa-border-right($border-width-value, $border-color-value, $important: null) {
+@mixin border-right($border-width-value, $border-color-value, $important: null) {
   border-right: map-get($border-width-values, $border-width-value) solid map-get($color-values, $border-color-value) $important;
 }
 
-@mixin fa-border-top($border-width-value, $border-color-value, $important: null) {
+@mixin border-top($border-width-value, $border-color-value, $important: null) {
   border-top: map-get($border-width-values, $border-width-value) solid map-get($color-values, $border-color-value) $important;
 }
 

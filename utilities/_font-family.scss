@@ -24,12 +24,12 @@ $font-family-values: (
 
 /**
  * Example usage:
- * `@include fa-font-family(default);`
- * `@include fa-font-family(editorial);`
- * `@include fa-font-family(legacy, !important);`
+ * `@include font-family(default);`
+ * `@include font-family(editorial);`
+ * `@include font-family(legacy, !important);`
  */
 
-@mixin fa-font-family($value, $important: null) {
+@mixin font-family($value, $important: null) {
   font-family: map-get($font-family-values, $value) $important;
 }
 

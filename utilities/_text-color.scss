@@ -8,12 +8,12 @@
 
 /**
  * Example usage:
- * `@include fa-text-color(default);`
- * `@include fa-text-color(light);`
- * `@include fa-text-color(fa-blue, !important);`
+ * `@include text-color(default);`
+ * `@include text-color(light);`
+ * `@include text-color(fa-blue, !important);`
  */
 
-@mixin fa-text-color($value, $important: null) {
+@mixin text-color($value, $important: null) {
   color: map-get($text-color-values, $value) $important;
 }
 
