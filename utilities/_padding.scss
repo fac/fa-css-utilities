@@ -1,5 +1,5 @@
 /**
- * Note: scales, aliases and maps live in _utility-values.scss 
+ * Note: scales, aliases and maps live in _utility-values.scss
  */
 
 
@@ -8,28 +8,28 @@
 
 /**
  * Example usage:
- * `@include fa-padding(default);`
- * `@include fa-padding-left(large);`
- * `@include fa-padding-bottom(xx-large, !important);`
+ * `@include padding(default);`
+ * `@include padding-left(large);`
+ * `@include padding-bottom(xx-large, !important);`
  */
 
-@mixin fa-padding($value, $important: null) {
+@mixin padding($value, $important: null) {
   padding: map-get($spacing-values, $value) $important;
 }
 
-@mixin fa-padding-bottom($value, $important: null) {
+@mixin padding-bottom($value, $important: null) {
   padding-bottom: map-get($spacing-values, $value) $important;
 }
 
-@mixin fa-padding-left($value, $important: null) {
+@mixin padding-left($value, $important: null) {
   padding-left: map-get($spacing-values, $value) $important;
 }
 
-@mixin fa-padding-right($value, $important: null) {
+@mixin padding-right($value, $important: null) {
   padding-right: map-get($spacing-values, $value) $important;
 }
 
-@mixin fa-padding-top($value, $important: null) {
+@mixin padding-top($value, $important: null) {
   padding-top: map-get($spacing-values, $value) $important;
 }
 
@@ -40,7 +40,7 @@
 @if $u-classes-padding == true {
 
   @each $spacing-size, $spacing-value in $spacing-values {
-  
+
     .u-padding--#{$spacing-size} {
       padding: $spacing-value !important;
     }
@@ -56,7 +56,7 @@
     .u-padding-top--#{$spacing-size} {
       padding-top: $spacing-value !important;
     }
-  
+
   }
 
 }

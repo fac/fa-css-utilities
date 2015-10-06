@@ -22,41 +22,39 @@ Our starting point for new web projects at FreeAgent is [FA Origin](https://gith
 
 **Global values and aliases**. Global utility values are defined in [`_utility-values`](https://github.com/fac/fa-css-utilities/blob/master/_utility-values.scss). Utilities `font-size`, `line-height`, `padding`, `margin`, etc have scales of values, as well as aliases. All aliases live in [`_utility-aliases.scss`](https://github.com/fac/fa-css-utilities/blob/master/_utility-aliases.scss). Aliases provide a finite scale (`x-small`, `default`, `xx-large`, etc) to make authoring easier and more meaningful.
 
-**Local aliases**. You can assign local, project-specific aliases to global values by adding rules to [`_project-aliases`](https://github.com/fac/fa-css-utilities/blob/master/_project-aliases.scss). This way you aren’t continually declaring something like `@include fa-line-height(x-loose)` for your project’s default `line-height`. You can just assign `x-loose` to `default` for your project.
-
-**Meaningful namespacing**. Mixins for any FreeAgent-specific properties are prepended with `fa-`. Simple rule: if we have a custom value for a property (i.e. a value that isn't part of the CSS spec), we have a custom namespace (and associated mixins).
+**Local aliases**. You can assign local, project-specific aliases to global values by adding rules to [`_project-aliases`](https://github.com/fac/fa-css-utilities/blob/master/_project-aliases.scss). This way you aren’t continually declaring something like `@include line-height(x-loose)` for your project’s default `line-height`. You can just assign `x-loose` to `default` for your project.
 
 **Turning utility classes on/off**. Utility _classes_ mirror the behaviour of our mixins but can be applied to HTML elements directly. Rendering all of them naturally adds a lot of weight a `.css` file, so they can be individually turned on/off in [`_utility-settings.scss`](https://github.com/fac/fa-origin/blob/master/assets/scss/_utility-settings.scss). Utility classes have `!important` because utilities exist to do _one thing no matter what_.
 
-**Optional `!important`**. `!important` can be added to any mixin declaration, e.g.: `@include fa-padding(large, !important);`. This is especially useful for refactoring; `!important` allows us a way to turn existing UI patterns that rely on the cascade into completely self-contained components — _without_ breaking lots of stuff. Once a component has been created and rolled out, any `!important` arguments can just be removed.
+**Optional `!important`**. `!important` can be added to any mixin declaration, e.g.: `@include padding(large, !important);`. This is especially useful for refactoring; `!important` allows us a way to turn existing UI patterns that rely on the cascade into completely self-contained components — _without_ breaking lots of stuff. Once a component has been created and rolled out, any `!important` arguments can just be removed.
 
 ### Examples
 
-Most utilities can be applied two ways: directly to HTML elements as classes, or as mixins in a `.scss` file. Utilities can be added to any element, multiple utilities can be used together, and utilities can be used alongside components.
+Most utilities can be applied two ways: using mixins in a `.scss` file, or directly to HTML elements as utility classes. Using mixins is preferred as you get all of the utility functionality without any extra weight being added to the output CSS file, and it encourages the idea of a component-based system.
 
-#### Using mixins in SASS
+#### Using mixins in `.scss` files
 
 ```scss
 .MyComponent {
-  @include fa-background-color(gray-13);
-  @include fa-font-family(default);
-  @include fa-font-size(large);
-  @include fa-line-height(tight);
-  @include fa-text-color(fa-blue);
+  @include background-color(gray-13);
+  @include font-family(default);
+  @include font-size(large);
+  @include line-height(tight);
+  @include text-color(fa-blue);
 }
 
 .MyOtherComponent {
-  @include fa-margin-top(large);
   @include flexbox(flex);
   @include flex-direction(row-reverse);
   @include flex-justify-content(center);
   @include flex-grow(2);
   @include flex-shrink(0);
+  @include margin-top(large);
 }
 ```
 
 #### Using utility classes in HTML
-Utility classes are useful for prototyping ideas, but treat them as temporary (remember they apply `!important`). Components should handle their own states and variants, so there should be relatively few utility classes being used in production.
+Utility classes are useful for prototyping ideas, but use them with care and treat them as stop-gaps (remember they apply `!important`). Components should handle their own states and variants, so there should be relatively few utility classes being used in production.
 
 **You might start with this&hellip;**
 
@@ -81,21 +79,21 @@ Utility classes are useful for prototyping ideas, but treat them as temporary (r
   margin: 0;
   padding: 0;
   text-align: center;
-  @include fa-border-radius(default);
-  @include fa-border(thin, solid, fa-blue);
-  @include fa-line-height(tight);
+  @include border-radius(default);
+  @include border(thin, solid, fa-blue);
   @include flexbox(flex);
   @include flex-align-items(stretch);
   @include flex-direction(row);
+  @include line-height(tight);
 
 .SegmentedControl-segment {
   background: none;
   display: inline-block;
   margin: 0;
-  @include fa-border-right(thin, solid, fa-blue);
-  @include fa-padding(x-small, small)
-  @include fa-text-color(x-light);
+  @include border-right(thin, solid, fa-blue);
   @include flex-grow(1);
+  @include padding(x-small, small)
+  @include text-color(x-light);
   @include text-truncate;
 }
 ```

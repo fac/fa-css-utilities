@@ -33,12 +33,12 @@ $font-weight-values: (
 
 /**
  * Example usage:
- * `@include fa-font-weight(thin);`
- * `@include fa-font-weight(bold);`
- * `@include fa-font-weight(9, !important);`
+ * `@include font-weight(thin);`
+ * `@include font-weight(bold);`
+ * `@include font-weight(9, !important);`
  */
 
-@mixin fa-font-weight($value, $important: null) {
+@mixin font-weight($value, $important: null) {
   font-weight: map-get($font-weight-values, $value) $important;
 }
 

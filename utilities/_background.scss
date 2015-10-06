@@ -8,11 +8,11 @@
     none;
 
   @each $background-value in $background-values {
-  
+
     .u-background--#{$background-value} {
       background: $background-value !important;
     }
-  
+
   }
 
 }
@@ -23,12 +23,12 @@
 
 /**
  * Example usage:
- * `@include fa-background-color(gray-12);`
- * `@include fa-background-color(fa-blue);`
- * `@include fa-background-color(gray-16, !important);`
+ * `@include background-color(gray-12);`
+ * `@include background-color(fa-blue);`
+ * `@include background-color(gray-16, !important);`
  */
 
-@mixin fa-background-color($value, $important: null) {
+@mixin background-color($value, $important: null) {
   background-color: map-get($color-values, $value) $important;
 }
 
@@ -36,11 +36,11 @@
 @if $u-classes-background == true {
 
   @each $color, $color-value in $color-values {
-  
+
     .u-background-color--#{$color} {
       background-color: $color-value !important;
     }
-  
+
   }
 
   $background-color-values:
@@ -48,11 +48,11 @@
     transparent;
 
   @each $background-color-value in $background-color-values {
-  
+
     .u-background-color--#{$background-color-value} {
       background-color: $background-color-value !important;
     }
-  
+
     .u-background-color--#{$background-color-value}--active:active {
       background-color: $background-color-value !important;
     }
@@ -74,11 +74,11 @@
     none;
 
   @each $background-image-value in $background-image-values {
-  
+
     .u-background-image--#{$background-image-value} {
       background-image: $background-image-value !important;
     }
-  
+
   }
 
 }
@@ -101,11 +101,11 @@
     (right-top, right top);
 
   @each $background-position, $background-position-value in $background-position-values {
-  
+
     .u-background-position--#{$background-position} {
       background-position: $background-position-value !important;
     }
-  
+
   }
 
 }
@@ -121,11 +121,11 @@
     contain;
 
   @each $background-size-value in $background-size-values {
-  
+
     .u-background-size--#{$background-size-value} {
       background-size: $background-size-value !important;
     }
-  
+
   }
 
 }

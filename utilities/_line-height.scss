@@ -32,12 +32,12 @@ $line-height-values: (
 
 /**
  * Example usage:
- * `@include fa-line-height(tight);`
- * `@include fa-line-height(x-loose);`
- * `@include fa-line-height(9, !important);`
+ * `@include line-height(tight);`
+ * `@include line-height(x-loose);`
+ * `@include line-height(9, !important);`
  */
 
-@mixin fa-line-height($value, $important: null) {
+@mixin line-height($value, $important: null) {
   line-height: map-get($line-height-values, $value) $important;
 }
 

@@ -8,12 +8,12 @@
 
 /**
  * Example usage:
- * `@include fa-list-item-spacing(tight);`
- * `@include fa-list-item-spacing(default);`
- * `@include fa-list-item-spacing(x-loose, !important);`
+ * `@include list-item-spacing(tight);`
+ * `@include list-item-spacing(default);`
+ * `@include list-item-spacing(x-loose, !important);`
  */
 
-@mixin fa-list-item-spacing($value, $important: null) {
+@mixin list-item-spacing($value, $important: null) {
   margin-bottom: map-get($list-item-spacing-values, $value) $important;
 }
 
