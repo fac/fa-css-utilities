@@ -40,7 +40,7 @@ Most utilities can be applied two ways: using mixins in a `.scss` file, or direc
   @include font-family(default);
   @include font-size(large);
   @include line-height(tight);
-  @include text-color(fa-blue);
+  @include text-color(blue);
 }
 
 .MyOtherComponent {
@@ -59,7 +59,7 @@ Utility classes are useful for prototyping ideas, but use them with care and tre
 **You might start with this&hellip;**
 
 ```html
-<div class="u-margin--0 u-padding--0 u-text-align--center u-border-radius--default u-border--thin--solid--fa-blue u-line-height--tight u-flexbox u-flex-align-items--stretch u-flex-direction--row">
+<div class="u-margin--0 u-padding--0 u-text-align--center u-border-radius--default u-border--thin--solid--blue u-line-height--tight u-flexbox u-flex-align-items--stretch u-flex-direction--row">
   <button class="u-background--none u-display--inline-block u-margin--0 u-border-right--thin--solid--blue u-padding--x-small--small u-text-color--x-light u-flex-grow--1 u-text-truncate">Payment</button>
   <button class="u-background--none u-display--inline-block u-margin--0 u-padding--x-small--small u-text-color--x-light u-flex-grow--1 u-text-truncate">Refund</button>
 </div>
@@ -80,7 +80,7 @@ Utility classes are useful for prototyping ideas, but use them with care and tre
   padding: 0;
   text-align: center;
   @include border-radius(default);
-  @include border(thin, solid, fa-blue);
+  @include border(thin, solid, blue);
   @include flexbox(flex);
   @include flex-align-items(stretch);
   @include flex-direction(row);
@@ -90,7 +90,7 @@ Utility classes are useful for prototyping ideas, but use them with care and tre
   background: none;
   display: inline-block;
   margin: 0;
-  @include border-right(thin, solid, fa-blue);
+  @include border-right(thin, solid, blue);
   @include flex-grow(1);
   @include padding(x-small, small)
   @include text-color(x-light);
@@ -121,7 +121,7 @@ All team members should be contributing back to this repo in order to improve it
 #### How to…
 
 ##### Add a new colour
-To create a new colour variable, add it to the *Colors* section in [_utility-values.scss](https://github.com/fac/fa-css-utilities/blob/master/_utility-values.scss). Your new colour should be defined using the `rgb(0, 0, 0)` format, and should follow the standard naming syntax: `$color--fa-colour-name--variant`, e.g. `$color--fa-blue--dark`.
+To create a new colour variable, add it to the *Colors* section in [_utility-values.scss](https://github.com/fac/fa-css-utilities/blob/master/_utility-values.scss). Your new colour should be defined using the `rgb(0, 0, 0)` format, and should follow the standard naming syntax: `$color--fa-colour-name--variant`, e.g. `$color--blue--dark`.
 
 **NB:** New colours should only be added to the utilities after you have decided on the exact value, so be sure to test them locally beforehand.
 

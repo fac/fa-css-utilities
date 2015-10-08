@@ -30,26 +30,26 @@ $border-radius--5: 10px;
    ========================================================================== */
 
 /* Primary palette */
-$color--fa-amber:  rgb(255, 157, 2);
-$color--fa-blue:   rgb(0,   122, 191);
-$color--fa-green:  rgb(124, 192, 74);
-$color--fa-purple: rgb(118, 54,  142);
-$color--fa-red:    rgb(253, 81,  39);
-$color--fa-yellow: rgb(255, 182, 8);
+$color--amber:  rgb(255, 157, 2);
+$color--blue:   rgb(0,   122, 191);
+$color--green:  rgb(124, 192, 74);
+$color--purple: rgb(118, 54,  142);
+$color--red:    rgb(253, 81,  39);
+$color--yellow: rgb(255, 182, 8);
 
 /* Dark and light variants */
-$color--fa-amber--dark:     adjust_hue(lighten($color--fa-amber, 0.5), 354);
-$color--fa-blue--dark:      adjust_hue(darken($color--fa-blue, 3.5), 2);
-$color--fa-blue--x-dark:    adjust_hue(darken($color--fa-blue, 8.5), 2);
-$color--fa-blue--x-light:   desaturate(lighten($color--fa-blue, 59), 50);
-$color--fa-green--dark:     adjust_hue(saturate(darken($color--fa-green, 7), 1), 0);
-$color--fa-green--text:     adjust_hue(saturate(darken($color--fa-green, 10), 0), 0);
-$color--fa-green--x-light:  desaturate(lighten($color--fa-green, 36), 10);
-$color--fa-purple--x-light: desaturate(lighten($color--fa-purple, 53), 20);
-$color--fa-red--dark:       desaturate(darken(adjust_hue($color--fa-red, 2), 10), 1);
-$color--fa-red--text:       adjust_hue(desaturate(darken($color--fa-red, 3), 0), 1);
-$color--fa-red--x-light:    desaturate(lighten($color--fa-red, 38), 2);
-$color--fa-yellow--x-light: lighten($color--fa-yellow, 39);
+$color--amber--dark:     adjust_hue(lighten($color--amber, 0.5), 354);
+$color--blue--dark:      adjust_hue(darken($color--blue, 3.5), 2);
+$color--blue--x-dark:    adjust_hue(darken($color--blue, 8.5), 2);
+$color--blue--x-light:   desaturate(lighten($color--blue, 59), 50);
+$color--green--dark:     adjust_hue(saturate(darken($color--green, 7), 1), 0);
+$color--green--text:     adjust_hue(saturate(darken($color--green, 10), 0), 0);
+$color--green--x-light:  desaturate(lighten($color--green, 36), 10);
+$color--purple--x-light: desaturate(lighten($color--purple, 53), 20);
+$color--red--dark:       desaturate(darken(adjust_hue($color--red, 2), 10), 1);
+$color--red--text:       adjust_hue(desaturate(darken($color--red, 3), 0), 1);
+$color--red--x-light:    desaturate(lighten($color--red, 38), 2);
+$color--yellow--x-light: lighten($color--yellow, 39);
 
 /* Grays */
 $color--gray-1:  #111;
