@@ -1,3 +1,8 @@
+/* Import Normalize
+   ========================================================================== */
+@import "_normalize";
+
+
 /* Global values
    ========================================================================== */
 
@@ -7,13 +12,13 @@
 /* Global aliases
    ========================================================================== */
 
-@import "_utility-aliases";  
+@import "_utility-aliases";
 
 
 /* Project-specific aliases
    ========================================================================== */
 
-@import "_project-aliases";  
+@import "_project-aliases";
 
 
 /* Utilities
