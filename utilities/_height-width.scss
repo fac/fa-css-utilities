@@ -8,11 +8,11 @@
     (100viewport, 100vh);
 
   @each $height, $height-value in $height-values {
-  
+
     .u-height--#{$height} {
       height: $height-value !important;
     }
-  
+
   }
 
 }
@@ -20,18 +20,22 @@
 /* `max-width`
    ========================================================================== */
 
-$max-width-values:
-  (0, 0)
-  (none, none)
-  (100percent, 100%)
-  (100viewport, 100vw);
+@if $u-classes-height-width == true {
 
-@each $max-width, $max-width-value in $max-width-values {
-  
-  .u-max-width--#{$max-width} {
-    max-width: $max-width-value !important;
+  $max-width-values:
+    (0, 0)
+    (none, none)
+    (100percent, 100%)
+    (100viewport, 100vw);
+
+  @each $max-width, $max-width-value in $max-width-values {
+
+    .u-max-width--#{$max-width} {
+      max-width: $max-width-value !important;
+    }
+
   }
-  
+
 }
 
 
@@ -45,11 +49,11 @@ $max-width-values:
     (100percent, 100%);
 
   @each $min-height, $min-height-value in $min-height-values {
-  
+
     .u-min-height--#{$min-height} {
       min-height: $min-height-value !important;
     }
-  
+
   }
 
 }
@@ -71,11 +75,11 @@ $max-width-values:
     (100viewport, 100vw);
 
   @each $width-size, $width-value in $width-values {
-  
+
     .u-width--#{$width-size} {
       width: $width-value !important;
     }
-  
+
   }
 
 }
