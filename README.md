@@ -108,7 +108,7 @@ We write our utilities in lower case as they tend to serve as direct representat
 ## Contributing
 All team members should be contributing back to this repo in order to improve it. The process:
 
-### Branch off, make changes, create a PR
+#### Branch off, make changes, create a PR
 
 1. Make sure you're up to date with the master branch (`git checkout master; git fetch; git pull origin master`)
 2. Branch off master (`git checkout -b <your-branch-name>`)
@@ -116,14 +116,14 @@ All team members should be contributing back to this repo in order to improve it
 4. Increment the version numbers in [package.json](https://github.com/fac/fa-css-utilities/blob/master/package.json) and [bower.json](https://github.com/fac/fa-css-utilities/blob/master/bower.json). Generally: backwards-compatible fixes and smaller amendments to existing code are patches, new components and breaking changes count as minor releases, and full rewrites are major releases. See [semver.org](http://semver.org/) for detailed guidance.
 5. Push up your changes (`git push origin <your-branch-name>`) and write a [helpful pull request](https://github.com/blog/1943-how-to-write-the-perfect-pull-request) describing your changes
 
-### Get your PR reviewed, merge to master, create new release
+#### Get your PR reviewed, merge to master, create new release
 
 5. Ask a fellow designer to review your changes. Make any required changes, then merge your branch into master: `git checkout master; git merge --no-ff <your-branch-name>`
 6. Push up the new version of master (`git push origin master`).
 7. [Create a new release](https://help.github.com/articles/creating-releases/) with a useful description. Your original PR is probably a good starting point. **If you’re making breaking changes, provide guidance in the release notes about what people will have to change in their projects**
 8. [Publish the npm package](https://docs.npmjs.com/getting-started/publishing-npm-packages) (`npm publish`) with a new version number. If you don't yet have access to update the npm package, have someone in the design team add as a contributor. There's no need to manually update the Bower package, as Bower relies solely on git tags for package version information.
 
-### Let people know, consider upgrading other projects
+#### Let people know, consider upgrading other projects
 
 Consider bringing other projects up to date with your new release, especially [Origin](https://github.com/fac/origin).
 
