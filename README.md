@@ -9,7 +9,7 @@ This means our properties are managed and versioned in a single place, and we ha
 
 [Guidance on writing HTML & CSS](https://github.com/fac/fa-origin/wiki)
 
-### Install
+## Install
 
 The utilities aren't a standalone project by themselves, but rather are to be installed in other projects. There are two ways to do so:
 
@@ -18,7 +18,7 @@ The utilities aren't a standalone project by themselves, but rather are to be in
 
 Our starting point for new web projects at FreeAgent is [FA Origin](https://github.com/fac/fa-origin#installation), of which `fa-css-utilities` is a dependency.
 
-### Overview
+## Overview
 
 **Global values and aliases**. Global utility values are defined in [`_utility-values`](https://github.com/fac/fa-css-utilities/blob/master/_utility-values.scss). Utilities `font-size`, `line-height`, `padding`, `margin`, etc have scales of values, as well as aliases. All aliases live in [`_utility-aliases.scss`](https://github.com/fac/fa-css-utilities/blob/master/_utility-aliases.scss). Aliases provide a finite scale (`x-small`, `default`, `xx-large`, etc) to make authoring easier and more meaningful.
 
@@ -28,11 +28,11 @@ Our starting point for new web projects at FreeAgent is [FA Origin](https://gith
 
 **Optional `!important`**. `!important` can be added to any mixin declaration, e.g.: `@include padding(large, !important);`. This is especially useful for refactoring; `!important` allows us a way to turn existing UI patterns that rely on the cascade into completely self-contained components — _without_ breaking lots of stuff. Once a component has been created and rolled out, any `!important` arguments can just be removed.
 
-### Examples
+## Examples
 
 Most utilities can be applied two ways: using mixins in a `.scss` file, or directly to HTML elements as utility classes. Using mixins is preferred as you get all of the utility functionality without any extra weight being added to the output CSS file, and it encourages the idea of a component-based system.
 
-#### Using mixins in `.scss` files
+### Using mixins in `.scss` files
 
 ```scss
 .MyComponent {
@@ -53,7 +53,7 @@ Most utilities can be applied two ways: using mixins in a `.scss` file, or direc
 }
 ```
 
-#### Using utility classes in HTML
+### Using utility classes in HTML
 Utility classes are useful for prototyping ideas, but use them with care and treat them as stop-gaps (remember they apply `!important`). Components should handle their own states and variants, so there should be relatively few utility classes being used in production.
 
 **You might start with this&hellip;**
@@ -98,38 +98,48 @@ Utility classes are useful for prototyping ideas, but use them with care and tre
 }
 ```
 
-#### Syntax
+### Syntax
 ```
 .u-<utility>[-descendent][--value]
 ```
 
 We write our utilities in lower case as they tend to serve as direct representations of actual CSS properties (as opposed to our components which are written in upper camel case). Keeping the syntax closer to actual CSS not only makes utilties more predictable, it also helps to create a further distinction between components and utilities.
 
-### Contributing
+## Contributing
 All team members should be contributing back to this repo in order to improve it. The process:
 
-1. Make sure you're up to date with the master branch (`git fetch; git pull origin master`)
-2. Branch off master (`git checkout -b <your-branch-name>`) and make your changes
-3. Increment the version numbers in [package.json](https://github.com/fac/fa-css-utilities/blob/master/package.json) and [bower.json](https://github.com/fac/fa-css-utilities/blob/master/bower.json). Generally: backwards-compatible fixes and smaller amendments to existing code are patches, new components and breaking changes count as minor releases, and full rewrites are major releases. See [semver.org](http://semver.org/) for detailed guidance.
-4. Push up your changes (`git push origin <your-branch-name>`) and write a [helpful pull request](https://github.com/blog/1943-how-to-write-the-perfect-pull-request) describing your changes
+### Branch off, make changes, create a PR
+
+1. Make sure you're up to date with the master branch (`git checkout master; git fetch; git pull origin master`)
+2. Branch off master (`git checkout -b <your-branch-name>`)
+3. Make your changes
+4. Increment the version numbers in [package.json](https://github.com/fac/fa-css-utilities/blob/master/package.json) and [bower.json](https://github.com/fac/fa-css-utilities/blob/master/bower.json). Generally: backwards-compatible fixes and smaller amendments to existing code are patches, new components and breaking changes count as minor releases, and full rewrites are major releases. See [semver.org](http://semver.org/) for detailed guidance.
+5. Push up your changes (`git push origin <your-branch-name>`) and write a [helpful pull request](https://github.com/blog/1943-how-to-write-the-perfect-pull-request) describing your changes
+
+### Get your PR reviewed, merge to master, create new release
+
 5. Ask a fellow designer to review your changes. Make any required changes, then merge your branch into master: `git checkout master; git merge --no-ff <your-branch-name>`
 6. Push up the new version of master (`git push origin master`).
-7. [Create a new release](https://help.github.com/articles/creating-releases/) with a useful description. **If you’re making breaking changes, provide guidance in the release notes about what people will have to change in their projects (e.g. “rename instances of `u-padding--none` to `u-padding--0`”)**
-8. [Update the NPM package](https://docs.npmjs.com/getting-started/publishing-npm-packages) (`npm publish`) with a new version number. If you don't yet have access to update the NPM package, have someone in the design team add as a contributor. There's no need to manually update the Bower package, as Bower relies solely on git tags for package version information.
-9. Consider updating the `fa-css-utilities` version numbers in `package.json` for any other projects that should receive these updates. [FA Origin](https://github.com/fac/fa-origin#installation) almost always should, so update that!
+7. [Create a new release](https://help.github.com/articles/creating-releases/) with a useful description. Your original PR is probably a good starting point. **If you’re making breaking changes, provide guidance in the release notes about what people will have to change in their projects**
+8. [Publish the npm package](https://docs.npmjs.com/getting-started/publishing-npm-packages) (`npm publish`) with a new version number. If you don't yet have access to update the npm package, have someone in the design team add as a contributor. There's no need to manually update the Bower package, as Bower relies solely on git tags for package version information.
 
-#### How to…
+### Let people know, consider upgrading other projects
 
-##### Add a new colour
+Consider bringing other projects up to date with your new release, especially [Origin](https://github.com/fac/origin).
+
+### How to…
+
+#### Add a new colour
 To create a new colour variable, add it to the *Colors* section in [_utility-values.scss](https://github.com/fac/fa-css-utilities/blob/master/_utility-values.scss). Your new colour should be defined using the `rgb(0, 0, 0)` format, and should follow the standard naming syntax: `$color--fa-colour-name--variant`, e.g. `$color--fa-blue--dark`.
 
 **NB:** New colours should only be added to the utilities after you have decided on the exact value, so be sure to test them locally beforehand.
 
-### Acknowledgements
+## Acknowledgements
 * [Nicolas Gallagher](https://github.com/necolas) particularly for his work on [SUIT CSS](https://suitcss.github.io/), which has informed much of the thinking behind this work
 * [Brian Franco](https://github.com/mastastealth) for the excellent [SASS flex mixin](https://github.com/mastastealth/sass-flex-mixin) we used as the basis for our own partials
 
-### To do
+## To do
 * Allow `margin` and `padding` to accept negative values
+* Allow `margin` and `padding` to accept shorthand values
 * Allow `linear-gradient` mixin to accept color map and `!important` values
 * Allow `font-kerning` mixin to accept multiple values
