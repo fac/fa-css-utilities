@@ -10,6 +10,7 @@
  * Example usage:
  * `@include padding(default);`
  * `@include padding(default large);`
+ * `@include padding(default large x-large xx-small);`
  * `@include padding(x-large small, !important);`
  * `@include padding-left(large);`
  * `@include padding-bottom(xx-large, !important);`

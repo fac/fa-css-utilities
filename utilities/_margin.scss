@@ -10,6 +10,7 @@
  * Example usage:
  * `@include margin(default);`
  * `@include margin(default large);`
+ * `@include padding(default large x-large xx-small);`
  * `@include margin(x-large small, !important);`
  * `@include margin-left(large);`
  * `@include margin-bottom(xx-large, !important);`
