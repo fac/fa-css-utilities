@@ -9,12 +9,29 @@
 /**
  * Example usage:
  * `@include padding(default);`
+ * `@include padding(default large);`
+ * `@include padding(x-large small, !important);`
  * `@include padding-left(large);`
  * `@include padding-bottom(xx-large, !important);`
  */
 
-@mixin padding($value, $important: null) {
-  padding: map-get($spacing-values, $value) $important;
+/**
+ * This mixin allows us to use shorthand values for the `padding` property.
+ *
+ * The mixin runs through our spacing values, given in the first argument, then
+ * creates another list of the mappings of those spacing values, which it then
+ * feeds to the `padding` property.
+ */
+
+@mixin padding($values, $important: null) {
+  $valueList: ();
+
+  @for $i from 1 through length($values) {
+    $value: map-get($spacing-values, nth($values, $i));
+    $valueList: append($valueList, $value, space);
+  }
+
+  padding: $valueList $important;
 }
 
 @mixin padding-bottom($value, $important: null) {
