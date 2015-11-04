@@ -7,21 +7,21 @@
    ========================================================================== */
 
 /**
-* Example usage:
-* `@include margin(default);`
-* `@include margin(default large);`
-* `@include margin(x-large small, !important);`
-* `@include margin-left(large);`
-* `@include margin-bottom(xx-large, !important);`
-*/
+ * Example usage:
+ * `@include margin(default);`
+ * `@include margin(default large);`
+ * `@include margin(x-large small, !important);`
+ * `@include margin-left(large);`
+ * `@include margin-bottom(xx-large, !important);`
+ */
 
 /**
-* This mixin allows us to use shorthand values for the `margin` property.
-*
-* The mixin runs through our spacing values, given in the first argument, then
-* creates another list of the mappings of those spacing values, which it then
-* feeds to the `margin` property.
-*/
+ * This mixin allows us to use shorthand values for the `margin` property.
+ *
+ * The mixin runs through our spacing values, given in the first argument, then
+ * creates another list of the mappings of those spacing values, which it then
+ * feeds to the `margin` property.
+ */
 
 @mixin margin($values, $important: null) {
   $valueList: ();
