@@ -137,9 +137,3 @@ To create a new colour variable, add it to the *Colors* section in [_utility-val
 ## Acknowledgements
 * [Nicolas Gallagher](https://github.com/necolas) particularly for his work on [SUIT CSS](https://suitcss.github.io/), which has informed much of the thinking behind this work
 * [Brian Franco](https://github.com/mastastealth) for the excellent [SASS flex mixin](https://github.com/mastastealth/sass-flex-mixin) we used as the basis for our own partials
-
-## To do
-* Allow `margin` and `padding` to accept negative values
-* Allow `margin` and `padding` to accept shorthand values
-* Allow `linear-gradient` mixin to accept color map and `!important` values
-* Allow `font-kerning` mixin to accept multiple values
