@@ -1,5 +1,5 @@
 # FreeAgent CSS utilities
-These CSS utilities are our ‘one true source’ of design properties at FreeAgent, comprising:
+These CSS utilities are our ‘one true source’ of design properties at FreeAgent, as used in our CSS framework [Origin](https://github.com/fac/origin). They comprise:
 
 * Universal scales and aliases for: `font-size`, `font-family`, `line-height`, `color`, `background-color`, `margin`, `padding`, `border-radius`, and more
 * Library of colours for text and block-level elements
@@ -7,16 +7,15 @@ These CSS utilities are our ‘one true source’ of design properties at FreeAg
 
 This means our properties are managed and versioned in a single place, and we have a universal language for using them across our projects and platforms.
 
-[Guidance on writing HTML & CSS](https://github.com/fac/fa-origin/wiki)
+For guidance on how we write HTML & CSS at FreeAgent, visit the [Origin docs](http://fac.github.io/origin/guidance/principles/)
 
 ## Install
+It’s possible to integrate the utilities into a project of your own, but our CSS framework [Origin](https://github.com/fac/origin) already uses them. So if you’re developing at FreeAgent, install Origin and you're good to go.
 
-The utilities aren't a standalone project by themselves, but rather are to be installed in other projects. There are two ways to do so:
+The utilities are implemented in Origin via npm, though it’s available via Bower too:
 
 * [Install using NPM](https://www.npmjs.com/package/fa-css-utilities)
 * [Install using Bower](http://bower.io/#install-packages)
-
-Our starting point for new web projects at FreeAgent is [FA Origin](https://github.com/fac/fa-origin#installation), of which `fa-css-utilities` is a dependency.
 
 ## Overview
 
@@ -137,3 +136,4 @@ To create a new colour variable, add it to the *Colors* section in [_utility-val
 ## Acknowledgements
 * [Nicolas Gallagher](https://github.com/necolas) particularly for his work on [SUIT CSS](https://suitcss.github.io/), which has informed much of the thinking behind this work
 * [Brian Franco](https://github.com/mastastealth) for the excellent [SASS flex mixin](https://github.com/mastastealth/sass-flex-mixin) we used as the basis for our own partials
+in
